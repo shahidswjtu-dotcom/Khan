@@ -1,0 +1,102 @@
+{
+  "source": "/workspace/Khan/fortran_reference/Console2.original.f90",
+  "checks_passed": [
+    "literal_yielded_rod_transverse_force_bug",
+    "corrected_axial_rod_has_zero_internal_resultant",
+    "PDROD_density_space_adjoint_transfer",
+    "physical_PDROD_volume_normalization_counterexample",
+    "volume_corrected_interface_force_and_virtual_work",
+    "displacement_only_support_retains_constrained_velocity",
+    "reference_linear_rod_finite_rotation_counterexample"
+  ],
+  "constants": {
+    "dx_m": 0.019,
+    "dt_s": 3e-06,
+    "concrete_volume_m3": 6.859e-06,
+    "steel_nodal_volume_m3": 1.008254e-05,
+    "volume_ratio": 1.469972299168975,
+    "original_rod_A1_m2": 0.000530929158456675,
+    "volume_area_m2": 0.00053066,
+    "cap_force_N": 220754.56,
+    "steel_mass_kg": 0.079147939,
+    "concrete_mass_kg": 0.0171475
+  },
+  "yielded_rod": {
+    "physical_forces_N": [
+      [
+        220754.56,
+        0.0,
+        0.0
+      ],
+      [
+        -220754.56,
+        -220754.56,
+        -220754.56
+      ]
+    ],
+    "net_internal_force_N": [
+      0.0,
+      -220754.56,
+      -220754.56
+    ],
+    "wrong_right_node_terminal_velocity_m_s": [
+      -7298.245614035088,
+      -7298.245614035088,
+      -7298.245614035088
+    ]
+  },
+  "interface": {
+    "weight_sum": 1.0,
+    "test_density_N_m3": [
+      1000000000.0,
+      -2000000000.0,
+      3000000000.0
+    ],
+    "physical_internal_resultant_N": [
+      3223.539999999999,
+      -6447.079999999998,
+      9670.619999999999
+    ],
+    "required_density_reaction_factor_preserving_steel_force": 1.469972299168975,
+    "physical_normalization_is_conditional_on_declared_vol1_steel_mass": true,
+    "alternative_uniform_vol_interpretation": "Conserves interface force but scales physical rod stiffness/cap by vol/vol1 and gives a steel nodal mass inconsistent with the rod area."
+  },
+  "time_integration": {
+    "gamma_concrete_per_s": 1200.0,
+    "gamma_steel_per_s": 382.1656050955414,
+    "gamma_concrete_times_dt": 0.0036,
+    "gamma_steel_times_dt": 0.0011464968152866243,
+    "isolated_axial_chain_lambda_per_s2": 293742436078.07166,
+    "isolated_axial_chain_critical_dt_s": 3.688871549059735e-06,
+    "isolated_axial_chain_stability_lhs": 2.645974918333218,
+    "full_mesh_and_contact_stability_not_established": true,
+    "damping_recurrence_is_stable_at_original_dt": true
+  },
+  "support_counterexample": {
+    "clamped_displacement_m": 0.0,
+    "retained_constrained_velocity_m_s": 0.33333333333332565,
+    "last_unprojected_increment_m": 9.99999999999977e-07
+  },
+  "rod_rotation": {
+    "rigid_rotation_rad": 0.1,
+    "exact_finite_length_strain": 0.0,
+    "reference_linear_axial_force_N": -551706.3395430888
+  },
+  "completed_run_corroboration": {
+    "node_2_displacement_m": [
+      -14.381686071974698,
+      -747.0244297593979,
+      -747.0155775325173
+    ],
+    "node_2_velocity_m_s": [
+      -2.173744938691851e-14,
+      -7298.245614034692,
+      -7298.245614034692
+    ],
+    "predicted_wrong_transverse_terminal_velocity_m_s": -7298.245614035088,
+    "node_2_y_velocity_difference_m_s": 3.956301952712238e-10,
+    "node_2_z_velocity_difference_m_s": 3.956301952712238e-10,
+    "nodes_with_same_y_and_z_wrong_terminal_velocity": 360,
+    "maximum_displacement_norm_m": 1300.168099603453
+  }
+}

@@ -1,0 +1,22 @@
+西南交通大学硕士学位论文 
+88 
+ 
+附录B UHPC-NC 双材料近场动力学模型代码 
+以下是示例程序代码： 
+if (matnum(i,1).eq.1.and.matnum(cnode,1).eq.1) then 
+    bc = bcc_1*(1.0d0-(idist/delta)**2)**2 
+    s0 = s0_1*dif1 
+    sc = sc_1*dif1 
+elseif (matnum(i,1).eq.2.and.matnum(cnode,1).eq.2) then 
+    bc = bcc_2*(1.0d0-(idist/delta)**2)**2 
+    s0 = s0_2*dif2 
+    sc = sc_2*dif2 
+elseif (matnum(i,1).eq.1.and.matnum(cnode,1).eq.2) then 
+    bc = bcc_1*(1.0d0-(idist/delta)**2)**2 
+    s0 = s0_1*dif1 
+    sc = sc_1*dif1 
+elseif (matnum(i,1).eq.2.and.matnum(cnode,1).eq.1) then 
+    bc = bcc_1*(1.0d0-(idist/delta)**2)**2 
+    s0 = s0_1*dif1 
+    sc = sc_1*dif1 
+endif

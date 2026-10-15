@@ -1,0 +1,16 @@
+rates=[0.,1e-2,1.,100.]
+fig,axs=plt.subplots(1,2,figsize=(12,4),constrained_layout=True)
+sweep=np.linspace(-0.00025,0.0040,400)
+for q in rates:
+    f,_=bond_scalar_force(sweep,q,r)
+    axs[0].plot(sweep*1e3,f/(c*s0),label=f'{q:g} s$^{{-1}}$')
+axs[0].set(xlabel='Bond stretch (×10⁻³)',ylabel='Force density / (c s₀)',title='Bowen NC bilinear envelope')
+axs[0].legend();axs[0].grid(alpha=.3)
+rate_sweep=np.logspace(-7,3,240)
+dft,dfe=normal_concrete_difs(rate_sweep)
+axs[1].semilogx(rate_sweep,dft,label='DIF tensile strength')
+axs[1].semilogx(rate_sweep,dfe,label='DIF elastic modulus')
+axs[1].semilogx(rate_sweep,dft/dfe,label='Stretch threshold factor',ls='--')
+axs[1].set(xlabel='Tensile stretch rate (s⁻¹)',ylabel='Dynamic factor',title='Bowen normal concrete DIFs')
+axs[1].legend();axs[1].grid(alpha=.3)
+plt.show()

@@ -1,0 +1,60 @@
+西南交通大学硕士学位论文 
+90 
+ 
+                      N7(i,j)*olddisp(cnode7,2) + N8(i,j)*olddisp(cnode8,2) 
+ 
+        olddispdisp(3) = N1(i,j)*olddisp(cnode1,3) + N2(i,j)*olddisp(cnode2,3) + & 
+                      N3(i,j)*olddisp(cnode3,3) + N4(i,j)*olddisp(cnode4,3) + & 
+                      N5(i,j)*olddisp(cnode5,3) + N6(i,j)*olddisp(cnode6,3) + & 
+                      N7(i,j)*olddisp(cnode7,3) + N8(i,j)*olddisp(cnode8,3) 
+ 
+        idist = dsqrt( (coordcoordcoord(i,1,j) - coord(i,1))**2 + & 
+                   (coordcoordcoord(i,2,j) - coord(i,2))**2 + & 
+                   (coordcoordcoord(i,3,j) - coord(i,3))**2 ) 
+ 
+        nlength = dsqrt( (coordcoordcoord(i,1,j) + dispdisp(i,1,j) - coord(i,1) - disp(i,1))**2 + & 
+                        (coordcoordcoord(i,2,j) + dispdisp(i,2,j) - coord(i,2) - disp(i,2))**2 + & 
+                        (coordcoordcoord(i,3,j) + dispdisp(i,3,j) - coord(i,3) - disp(i,3))**2 ) 
+ 
+        oldnlength = dsqrt( (coordcoordcoord(i,1,j) + olddispdisp(1) - coord(i,1) - olddisp(i,1))**2 
++ & 
+                          (coordcoordcoord(i,2,j) 
++ 
+olddispdisp(2) 
+- 
+coord(i,2) 
+- 
+olddisp(i,2))**2 + & 
+                          (coordcoordcoord(i,3,j) 
++ 
+olddispdisp(3) 
+- 
+coord(i,3) 
+- 
+olddisp(i,3))**2 ) 
+ 
+        sssss = (nlength - idist) / idist 
+        s1 = dabs( (nlength - oldnlength) / idist / dt ) 
+        s0 = s01 
+        sc = sc1 
+        bc = bcc * (1.0d0 - (idist/delta)**2)**2 
+ 
+        if (sssss <= s0) then 
+            dforce1 = bc * sssss * vol * (coordcoordcoord(i,1,j) + dispdisp(i,1,j) - coord(i,1) - 
+disp(i,1)) / nlength 
+            dforce2 = bc * sssss * vol * (coordcoordcoord(i,2,j) + dispdisp(i,2,j) - coord(i,2) - 
+disp(i,2)) / nlength 
+            dforce3 = bc * sssss * vol * (coordcoordcoord(i,3,j) + dispdisp(i,3,j) - coord(i,3) - 
+disp(i,3)) / nlength 
+        elseif ((sssss > s0) .and. (sssss <= sc)) then 
+            dforce1 = bc * s0 * (sc - sssss) / (sc - s0) * vol * & 
+                    (coordcoordcoord(i,1,j) + dispdisp(i,1,j) - coord(i,1) - disp(i,1)) / nlength 
+            dforce2 = bc * s0 * (sc - sssss) / (sc - s0) * vol * & 
+                    (coordcoordcoord(i,2,j) + dispdisp(i,2,j) - coord(i,2) - disp(i,2)) / nlength 
+            dforce3 = bc * s0 * (sc - sssss) / (sc - s0) * vol * & 
+                    (coordcoordcoord(i,3,j) + dispdisp(i,3,j) - coord(i,3) - disp(i,3)) / nlength 
+        elseif (sssss > sc) then 
+            dforce1 = 0.0d0 
+            dforce2 = 0.0d0 
+            dforce3 = 0.0d0 
+        endif 

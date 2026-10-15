@@ -1,0 +1,31 @@
+{
+  "original_sha256": "99d6a1b962a883d4ac181a23066ae140889cd53a957ebdb9050c155a376aaeca",
+  "steps": 200,
+  "duration_s": 0.0006000000000000001,
+  "all_finite": true,
+  "concrete_nodes": 36036,
+  "steel_nodes": 362,
+  "history_max_absolute_difference_by_column": [
+    0.0,
+    0.0,
+    0.0,
+    1.3877787807814457e-17,
+    0.0,
+    0.0
+  ],
+  "state_max_absolute_difference_by_column": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    4.6448130099413175e-25,
+    4.071279577409433e-25,
+    6.203854594147708e-25,
+    3.5998900258307764e-21,
+    3.0374072092947176e-21,
+    4.235164736271502e-21,
+    0.0
+  ],
+  "full_loading_completed": false,
+  "bowen_chapter3_equivalence": false
+}

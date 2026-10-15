@@ -1,0 +1,14 @@
+{
+  "original_bytes_sha256": "99d6a1b962a883d4ac181a23066ae140889cd53a957ebdb9050c155a376aaeca",
+  "corrected_bytes_sha256": "a5308e8fb31335dccac4ccb4547ce30fb8723d5134f52616dff46e81b827c434",
+  "corrections": [
+    "steel_components",
+    "interface_balance",
+    "support_velocity",
+    "contact_mass",
+    "contact_tangent"
+  ],
+  "portable_angles": true,
+  "parameters_tuned": false,
+  "bowen_chapter3_identity": false
+}

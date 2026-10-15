@@ -1,0 +1,116 @@
+{
+  "source": "/workspace/Khan/fortran_reference/runs/literal_100000",
+  "final_dump_precision": "ES25.16E3",
+  "snapshot_precision": "E12.5; rod stretches reconstructed from vector components",
+  "steel": {
+    "nodes": 362,
+    "maximum_displacement_m": 1300.168099603453,
+    "maximum_node_one_based": 181,
+    "maximum_node_reference_xyz_m": [
+      1.71,
+      -0.05,
+      -0.11
+    ],
+    "maximum_node_displacement_xyz_m": [
+      -749.1451561378133,
+      -751.6274570504906,
+      -751.1822602201934
+    ],
+    "maximum_node_velocity_xyz_m_per_s": [
+      -7298.245614034692,
+      -7298.245614034692,
+      -7298.245614034692
+    ],
+    "minimum_displacement_xyz_m": [
+      -749.1451561378133,
+      -751.6274570504906,
+      -751.1822602201934
+    ],
+    "maximum_displacement_xyz_m": [
+      743.857646765321,
+      -0.11828407407480965,
+      -0.2685968486931596
+    ],
+    "minimum_velocity_xyz_m_per_s": [
+      -7298.245614034692,
+      -7298.245614034692,
+      -7298.245614034692
+    ],
+    "maximum_velocity_xyz_m_per_s": [
+      7298.245614034692,
+      -2.2417965526819445e-16,
+      -4.483599032395298e-16
+    ],
+    "nodes_over_100mm": 362,
+    "mean_damage": 1.0
+  },
+  "concrete": {
+    "nodes": 36036,
+    "maximum_displacement_m": 1.4943543281281102,
+    "maximum_node_one_based": 5171,
+    "maximum_node_reference_xyz_m": [
+      -0.3324999999999998,
+      -0.076,
+      -0.12349999999999997
+    ],
+    "maximum_node_displacement_xyz_m": [
+      -0.1841301494842172,
+      -1.0339645390730565,
+      -1.0630655097337967
+    ],
+    "maximum_node_velocity_xyz_m_per_s": [
+      -2.0830881902995909e-53,
+      -1.7926668150389955e-52,
+      -2.114010953006479e-52
+    ],
+    "minimum_displacement_xyz_m": [
+      -0.4513263765185891,
+      -1.157077104589627,
+      -1.1877353175061827
+    ],
+    "maximum_displacement_xyz_m": [
+      0.4976857240093016,
+      0.2052889317940328,
+      0.12925513320137352
+    ],
+    "minimum_velocity_xyz_m_per_s": [
+      -2.3158085574424803,
+      -1.445721456378174,
+      -1.1475591774819391
+    ],
+    "maximum_velocity_xyz_m_per_s": [
+      1.5789186637779478,
+      0.7441546327488416,
+      0.7515912655657522
+    ],
+    "nodes_over_100mm": 5028,
+    "mean_damage": 0.8062159117735693
+  },
+  "sampled_first_rod_above_sy_step": 65000,
+  "sampled_last_no_rod_above_sy_step": 64000,
+  "first_actual_yield_step": null,
+  "first_actual_yield_caveat": "Not recorded; snapshot threshold crossing brackets the sampled transition, not first execution of that branch.",
+  "contact_peak": {
+    "step": 64881,
+    "time_s": 0.194643,
+    "force_z_N": 1059806.436515524
+  },
+  "probe_peak": {
+    "step": 99720,
+    "time_s": 0.29916,
+    "displacement_z_m": -0.010602894460392347
+  },
+  "final_rods_above_sy": 360,
+  "yield_force_N": 220754.56,
+  "steel_nodal_volume_m3": 1.008254e-05,
+  "yield_force_density_N_per_m3": 21894736842.105263,
+  "predicted_terminal_velocity_m_per_s": 7298.245614035088,
+  "max_abs_final_velocity_minus_defective_branch_terminal_m_per_s": 3.956301952712238e-10,
+  "defective_rod_net_force_xyz_N": [
+    0.0,
+    -79471641.60000052,
+    -79471641.60000052
+  ],
+  "final_steel_kinetic_energy_J_using_source_nodal_mass": 1526107514.5684428,
+  "final_concrete_kinetic_energy_J_using_source_nodal_mass": 0.5575029857569372
+}

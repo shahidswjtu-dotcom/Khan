@@ -1,0 +1,30 @@
+{
+  "primary_sources": [
+    {
+      "name": "Bowens Thesis.pdf",
+      "workspace_path": "/workspace/bowen_reproduction/sources/Bowens Thesis.pdf",
+      "sha256": "5e131138c5ff808709e2ca18495e077cf23f5f25d3e2ada9feda360f8b7add90",
+      "size_bytes": 10598960
+    },
+    {
+      "name": "thesis.txt",
+      "workspace_path": "/workspace/bowen_reproduction/sources/thesis.txt",
+      "sha256": "87c05a24049d0eb1f3733a2c31d04e8a4b4c5211f7b4ff59953669a1772b2a65",
+      "size_bytes": 247156
+    },
+    {
+      "name": "Console2.f90",
+      "workspace_path": "/workspace/bowen_reproduction/sources/fortran_sources/Console2.f90",
+      "sha256": "99d6a1b962a883d4ac181a23066ae140889cd53a957ebdb9050c155a376aaeca",
+      "size_bytes": 66546
+    },
+    {
+      "name": "CODEX_HANDOFF_BOWEN_PD_REPRODUCTION.md",
+      "workspace_path": "/workspace/bowen_reproduction/sources/CODEX_HANDOFF_BOWEN_PD_REPRODUCTION.md",
+      "sha256": "54676dc4545ce9e5804478cb3fda9f724166ec3fcdf0a9b7557677d22cfe3d67",
+      "size_bytes": 30444
+    }
+  ],
+  "stage19_runtime_or_regression_dependencies": [],
+  "source_note": "Fortran benchmark differs from Chapter 3; file hash proves identity, not applicability. Notebook code was not copied into the fresh package."
+}

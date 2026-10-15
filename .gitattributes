@@ -1,0 +1,3 @@
+# Preserve historical source hashes on platforms with automatic newline conversion.
+peridynamics/versions/** -text
+

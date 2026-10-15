@@ -1,0 +1,10 @@
+toolchain/
+build/
+checked_run/*.txt
+runs/*/solver
+runs/*/aaa.txt
+runs/*/bbb.txt
+runs/*/ccc.txt
+runs/*/ddd.txt
+runs/*/eee.txt
+core

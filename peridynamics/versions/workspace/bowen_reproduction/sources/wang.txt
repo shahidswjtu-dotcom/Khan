@@ -1,0 +1,1036 @@
+                                                               Computers and Geotechnics 143 (2022) 104625
+
+
+                                                                  Contents lists available at ScienceDirect
+
+
+                                                            Computers and Geotechnics
+                                                      journal homepage: www.elsevier.com/locate/compgeo
+
+
+
+
+Peridynamics simulation of structural damage characteristics in rock sheds
+under rockfall impact
+Haibo Wang a, b, c, d, Chengchao Guo a, b, c, d, Fuming Wang a, b, c, d, Pengpeng Ni a, b, c, d, Wei Sun a, b, c,
+d, *
+
+a
+  School of Civil Engineering, Sun Yat-sen University, Guangzhou 510275, China
+b
+  Southern Marine Science and Engineering Guangdong Laboratory (Zhuhai), China
+c
+  Guangdong Key Laboratory of Oceanic Civil Engineering, China
+d
+  Guangdong Research Center for Underground Space Exploitation Technology, China
+
+
+
+
+A R T I C L E I N F O                                    A B S T R A C T
+
+Keywords:                                                Rock shed structure is widely constructed above a tunnel portal to protect the tunnel from rockfall hazards. The
+Rock sheds                                               damage mechanism of rock sheds under rockfall impact is crucial, but is yet still unclear. In this study, a dynamic
+Rockfall                                                 peridynamic model with a relatively simple yet effective failure criterion, which considers the strain rate effect
+Dynamic peridynamics model
+                                                         for reinforced concrete shed structures under rockfall impact and is convenient for engineering applications, is
+Damage characteristics
+                                                         developed. After assessing the proposed method by comparing with two experimental tests, varieties of simu­
+                                                         lation cases are simulated to thoroughly investigate the influence of different factors, including the shape, mass
+                                                         and drop height of the falling rock, on the damage behavior of rock sheds without backfills under rockfall impact.
+                                                         The safety of the tunnel and the damage position for strengthening are evaluated by the proposed method. The
+                                                         structural damage degree of the tunnel increases with the increase of drop height and rockfall mass, but the
+                                                         resulting growth rate differs. The penetration ability of a round falling rock is superior to a squared or an octagon
+                                                         falling rock. A non-circular falling rock could induce a larger damage zone. Under the angular falling rock
+                                                         impact, the structure is more likely to be penetrated with a sharp impact angle. The modes of local crush and
+                                                         flexural failure occur firstly, and then the tunnel is sheared by the falling rock until overall collapse happens.
+                                                         Shear failure is more obvious when the drop height is higher or under the non-circular falling rock impact. The
+                                                         work suggests that all exiting analysis techniques for simplifying the impact force as a static load are not suf­
+                                                         ficient to understand the resistance of rock sheds under rockfall.
+
+
+
+
+1. Introduction                                                                            interruption of service for tunnels.
+                                                                                               The rockfall impact on reinforced concrete (RC) shed structures has
+    Rockfall, which is mainly triggered by earthquakes, freeze-and-thaw                    been extensively studied by full-scale (Mougin et al., 2005; Zhao et al.,
+cycles of rocks and rainfalls (Agliardi and Crosta, 2003; Budetta, 2004),                  2018) or scaled drop-weight (Calvetti and Di prisco, 2012; Hu et al.,
+is a typical type of commonly encountered geological disasters in                          2018, 2019; Kawahara and Muro, 2006; Luo et al., 2018) experiments.
+mountainous regions. As a common protection structure against rock­                        These studies were mainly focused on the investigation of the relation­
+fall, rock sheds are widely constructed above a tunnel portal. Even                        ship between the features of rockfall, such as the shape and the falling
+though a rock shed structure is often constructed with reinforced con­                     height of the falling rock, and the resulting mechanical responses of the
+crete, its safety is severely threatened by the rockfall impact when it is                 sheds, including the impact force, the stress or strain as well as the
+not backfilled. Structural damage, or even collapse failure of tunnel                      deflection. Through costly and time-consuming experiments, different
+portal can be the consequence of this impact. Thus, it is of great sig­                    crack patterns, including flexural failure and shear failure, for RC shed
+nificance to accurately evaluate the mechanical behavior and damage                        structure under the rockfall impact were captured. These experiments
+evolution mechanism of the rock sheds subjecting to the rockfall impact                    were beneficial not only for revealing the failure mechanism of rock
+for optimizing the protection design and preventing the occurrence of                      sheds, but also providing reliable testing data and important hints for
+
+
+    * Corresponding author.
+      E-mail address: sunw55@mail.sysu.edu.cn (W. Sun).
+
+https://doi.org/10.1016/j.compgeo.2021.104625
+Received 7 August 2021; Received in revised form 24 December 2021; Accepted 27 December 2021
+Available online 10 January 2022
+0266-352X/© 2022 Elsevier Ltd. All rights reserved.
+H. Wang et al.                                                                                                               Computers and Geotechnics 143 (2022) 104625
+
+
+                                                                                     and Shen et al. (2019) using the FEM and DEM, respectively. Results
+                                                                                     demonstrated that the impact force on a shed tunnel structure caused by
+                                                                                     a cuboid and cubical falling rock was larger than that induced by a
+                                                                                     spherical falling rock, but the penetration depth followed the opposite
+                                                                                     trend. Although some results about the damage of RC shed structure
+                                                                                     under rockfall impact have been obtained using the above numerical
+                                                                                     methods, the limitations associated with these approaches render them
+                                                                                     ineffective to handle the damage process with discontinuity. For
+                                                                                     instance, the partial derivatives are undefined in the vicinity of dis­
+                                                                                     continuities in the FEM. Under the impact loading, multiple discrete
+                                                                                     crack nucleation and propagation and severe fragmentation in the rock
+                                                                                     sheds could take place, which is not trivially to be simulated in the
+                                                                                     framework of the FEM. The dynamic interaction between rockfall and
+                                                                                     RC shed structure is complicated, such that a tedious calibration pro­
+                                                                                     cedure is required to determine the computational parameters in the
+                                                                                     DEM. Also, the large computational cost of the DEM model considerably
+                                                                                     restricts its applicability in the large-scale rock sheds impact simula­
+            Fig. 1. Notations and kinematics of the bond-based PD.
+                                                                                     tions. Alternatively, the discontinuous deformation analysis (DDA) (Shi
+                                                                                     and Goodman, 1989) and the numerical manifold method (NMM) (Shi,
+                                                                                     1991) have been adopted as effective tools to simulate the discontinuity
+                                                                                     behaviors in geotechnical engineering. For the rockfall impact problem,
+                                                                                     these methods are usually employed to investigate the motion charac­
+                                                                                     teristics of rockfall with different dimensions of rock blocks (Zheng
+                                                                                     et al., 2014; Ma et al., 2021). Yu et al. (2019) presented a numerical
+                                                                                     model to estimate the impact force of a rock landslide on a structure,
+                                                                                     where the rock landslide with large deformation and multiple block
+                                                                                     contacts and discontinuities is analyzed using DDA. However, the
+                                                                                     structure damage induced by the rock landslide is not considered.
+                                                                                     Moreover, numerical results of these methods are often influenced by
+                                                                                     the initial particle or block discretization configurations as well as the
+                                                                                     microscopic parameters with cumbersome calibration procedure. Thus,
+                                                                                     more studies about developing numerical approaches which can capture
+Fig. 2. Schematically illustration of the method to simulate the interaction
+                                                                                     complex crack patterns of rock sheds due to rockfall impact involving
+between concrete and steel in RC structures.
+                                                                                     multiple discrete crack nucleation and propagation and severe frag­
+                                                                                     mentation more efficiently are still needed.
+numerical analyses.
+                                                                                         A reformulated theory of continuum mechanics, namely the peri­
+    Having the ability of in-depth tracing the history of mechanical
+                                                                                     dynamics (PD), was firstly pioneered by Silling (2000). Compared with
+response with respect to the deformation or failure behavior of rock
+                                                                                     classical continuum mechanics, PD replaces the partial differential
+sheds, numerical methods for rockfall impact analysis have gained
+                                                                                     equations with integral–differential equations for characterizing the
+considerable attentions. Thereinto, the finite element method (FEM) and
+                                                                                     governing equations, which is still valid in the presence of discontinu­
+the discrete element method (DEM) have been widely used in damage
+                                                                                     ities. This feature allows that crack initiation and propagation at mul­
+simulation of shed structures, such as the arch-type RC rock sheds
+                                                                                     tiple sites with arbitrary paths inside the material can be modeled in a
+(Bhatti et al., 2008), shed tunnel protection systems (Ouyang et al.,
+2019), and RC sheds with a soil buffering layer (Bourrier et al., 2010;
+Zhang et al., 2017). As for RC rock sheds with backfills, Yan and He                 Table 1
+(2019) investigated the impact response of a RC shed tunnel using the                Range of strain rate of concrete material for different loading cases (unit s− 1) (
+FEM, and found that the maximum impact force was positively corre­                   Comité Euro-International du Béton, 1990 ).
+lated with the maximum and permanent indentation depth. In addition,                  Creep         Quasi-static        Earthquake         Impact           Explosion
+the influence of the shape of falling rock on the impact force and dy­
+                                                                                      <10-6         10-6 ~ 10-4         10-3 ~ 10-1        100 ~ 101        >102
+namic response of RC shed tunnel was investigated by Bai et al. (2020)
+
+
+
+
+                                   Fig. 3. Relocation of material points inside a target material for contact-impact simulation.
+
+                                                                                 2
+H. Wang et al.                                                                                                      Computers and Geotechnics 143 (2022) 104625
+
+
+
+
+                                              Fig. 4. Flowchart of the PD model for rockfall impact analysis.
+
+
+natural way without resorting to other external failure criteria. Thus, PD       first attempt pertaining the use of PD for damage analysis of RC structure
+theory permitting the prediction of spontaneous discontinuity has a              was made by Demmie and Silling (2007). Oterkus et al. (2012) applied
+substantial advantage of modeling the progressive failure in the rock            the PD theory for predicting the residual strength of a RC panel under
+shed induced by rockfall impact. So far, PD has been widely used for             impact loading. However, the strain rate effect of concrete material was
+damage analysis in many structures, such as end-loaded cantilever beam           not considered in these studies. Wu et al. (2020) formulated a rate-
+(Gerstle et al., 2007), composite laminate (Sun and Huang, 2016), rock           dependent PD model, describing the dynamic damage of concrete. Yu
+fracturing (Zhang et al., 2019), and cut-off wall in a landslide dam (Sun        and Chen (2021) proposed a viscoelastic micropolar peridynamic
+et al., 2021). For impact analysis, PD has been used to study the mixed-         (VMPD) model to describe the nonlinear deformation and fracture be­
+mode fracture in the three-point and four-point impact bending tests             haviors of quasi-brittle materials considering loading-rate effects. Huang
+(Chen et al., 2015; Liu et al., 2017), the crack growth in high speed            et al. (2021) developed a rate-dependent plastic-damage model modi­
+Kalthoff-Winkler plate impact (Amani et al., 2016), and the dynamic              fied from the Kong-Fang concrete model. Zhu and Zhao (2021) incor­
+fracture of brittle solids (Silling and Askari, 2005), among many others.        porated the calibrated Johnson-Holmquist (JH2) constitutive model into
+A critical review about peridynamic modeling of material failure and             PD and both the plastic and rate-dependent tension failure criterion are
+damage under impact can be referred to Isiet et al., 2021. Perhaps the           considered to model the rock fractures induced by blasting.
+
+
+                                                                             3
+H. Wang et al.                                                                                                              Computers and Geotechnics 143 (2022) 104625
+
+
+                                                                                      The pairwise force f(η, ξ) denotes the force vector per unit volume
+                                                                                  acting on particle x due to particles x′ within a horizon Hx, and ξ = x′ -x is
+                                                                                  the relative position of the two particles in the reference configuration.
+                                                                                  η = u(x′, t)- u(x, t) denotes the relative displacement. y is the position of
+                                                                                  material point x in the current configuration. Н + ξ denotes the relative
+                                                                                  position in the current configuration. For an isotropic homogeneous
+                                                                                  micro-elastic material, the pairwise force function can be derived from a
+                                                                                  scalar micro-potential function w(η, ξ) as
+                                                                                               ∂w(η, ξ)
+                                                                                  f (η, ξ) =                                                                       (2)
+                                                                                                 ∂η
+                                                                                     For prototype micro-elastic (PMB) materials, the micro-potential
+                                                                                  function can be defined as
+
+                                                                                               c(ξ, δ)s2 (η, ξ)|ξ|
+                                                                                  w(η, ξ) =                                                                        (3)
+                                                                                                       2
+
+                                                                                  where c(ξ, δ) denotes the micro-modulus; the symbol of empty parallel
+                                                                                  bars, | |, represents the norm or magnitude of quantity of interest; s(η, ξ)
+                                                                                  is the elongation of bond ξ, which can be interpreted as the strain in the
+                                                                                  classical continuum theory, and is defined as
+                                                                                               |η + ξ| − |ξ|
+                                                                                  s(η, ξ) =                                                                        (4)
+                                                                                                    |ξ|
+                                                                                      The micro-modulus c(ξ, δ) (for 2D bond-based PD models) is deter­
+                                                                                  mined by equating the strain energy densities of PD to the counterparts
+                                                                                  in classical continuum mechanics, and it reads
+Fig. 5. Sketch of the setup of the concrete compact tension specimen test
+(Ožbolt et al., 2013).                                                                        9E
+                                                                                  c(ξ, δ) =                                                                        (5)
+                                                                                               π δ3
+Nevertheless, the aforementioned rate-dependent PD models are some­
+                                                                                  where E is the elastic modulus of material. In Eq. (5), only one parameter
+what complicated. Also, using the rate-dependent PD model to study
+                                                                                  c is required to be determined, which results in the limitation of a fixed
+damage characteristics of RC structures was rare in literatures.
+                                                                                  Poisson’s ratio (1/3 in 2D plane stress model) in bond-based PD. This
+    Recently, the PD theory has attracted attentions in the field of tunnel
+                                                                                  limitation can be removed by using variants of bond-based PD (Wang
+engineering to solve the progressive failure problems for rock masses,
+                                                                                  et al., 2018) or state-based PD (Silling, 2007), which is out of the scope
+such as the surrounding rock damage characteristics during tunnel
+                                                                                  of this study.
+excavation (Gao et al., 2020) and the failure evolution process of water
+                                                                                      If a pair of particles have different material properties, such as steel
+inrush channel (Gao et al., 2021). However, to the author’s best
+                                                                                  and concrete illustrated in Fig. 2, both values of micro-modulus c(ξ, δ)
+knowledge, studies rarely appear in the field of rock sheds, especially for
+                                                                                  and critical stretch s0 are averaged for the bond that connects these
+the rockfall impact problem. The primary objective of the present work
+                                                                                  particles. By doing so, the interaction between concrete and steel in RC
+is to fill the gap, that is, comprehensively investigating the damage
+                                                                                  structures can be simply yet reasonably considered in the PD model
+behavior of rock shed structures without backfills under rockfall impact
+                                                                                  according to Sau et al (2019).
+using the PD model with a relatively simple yet effective failure criterion
+                                                                                      In the PD theory, a bond-breaking parameter μ is introduced in
+considering the strain rate effect.
+                                                                                  pairwise force function to represent the failure status of material points.
+    In this study, details about the PD numerical model for impact
+                                                                                  Substituting Eq. (3) into Eq. (2), the pairwise force function becomes
+analysis are firstly introduced, following by the comparison against two
+                                                                                  time dependent, allowing bonds to break irreversibly (representing
+experimental tests. Then, varieties of numerical simulation cases with
+                                                                                  failure without considering the temperature changes), and it reads
+different types of rigid rockfall impactors, i.e., different shapes, masses
+and drop heights of the falling rock, are analyzed parametrically in a                                             ξ+η
+                                                                                  f (η, ξ, t) = μc(ξ, δ)s(ξ, η)                                                    (6)
+quantitative manner. Finally, the damage characteristics and damage                                               |ξ + η|
+evolution process of rock sheds under rockfall impact are analyzed and
+                                                                                     The bond-breaking parameter μ is defined as
+discussed.
+                                                                                               {
+                                                                                                 1 if s < s0
+2. Peridynamics modeling of rockfall impact                                       μ(η, ξ, t) =                                                                     (7)
+                                                                                                  0 if s⩾s0
+
+2.1. Peridynamics theory                                                          where s0 is the critical stretch for bond failure, and it is associated with
+                                                                                  the strain rate, being detailed in Section 2.3.
+   As shown in Fig. 1, the equation of motion for material point×in the
+bond-based PD theory (Silling, 2000) at time t (t ≥ 0) is given as
+              ∫                                                                   2.2. Contact-impact algorithm between rigid falling rock and deformable
+                                                                    (1)
+    ..
+                                                                                  tunnel
+                      ′                 ′
+ρ(x)u(x, t) =   f (u(x , t) − u(x, t), x − x)dVx′ + b(x, t)
+                 Hx
+
+
+where ρ is the mass density, u is the displacement vector, b is the pre­              Herein, the contact-impact algorithm proposed by Madenci and
+                                                                                  Oterkus (2014) is employed to simulate the interaction between rigid
+scribed body force, Hx is the neighborhood of x, which defines a cutoff
+radius δ in the reference configuration, and f is the pairwise force              falling rock and deformable tunnel. As shown in Fig. 3a, the rigid
+                                                                                  impactor moves with its own velocity as a rigid body. After the rigid
+function.
+                                                                                  impactor contacts the target, the material point i located inside the
+
+                                                                              4
+H. Wang et al.                                                                                                                   Computers and Geotechnics 143 (2022) 104625
+
+
+
+
+                 The PD model
+
+
+
+
+                                                                                                                                                        Damage
+                 The smeared crack model
+                 The experiment
+
+
+
+
+                                           (a) loading rate 0.035 m/s   (b) loading rate 1.40 m/s                (c) loading rate 4.30 m/s
+
+Fig. 6. Comparisons of the crack patterns of the concrete specimen under different loading rates obtained by the proposed PD model, the smeared crack model and
+the experiment (Ožbolt et al., 2013).
+
+
+impactor is relocated (see Fig. 3b), i.e., material point i moves to the                    λ(i)t+Δt = 0.
+closest distance to the surface of the impactor. The velocity v t+Δt
+                                                                (i)  can be                      In addition, in order to prevent target material points from pene­
+computed as                                                                                 trating each other, a short-range repulsive force (Parks et al., 2008) is
+                                                                                            added,
+           u t+Δt   t
+             (i) − u(i)                                                                                        { c ⃒               } y − y
+v t+Δt
+  (i)  =                                                                          (8)                             sh         ⃒
+                                                                                            fs (yj , yi ) = min 0, (⃒yj − yi ⃒ − d) ⃒⃒
+                                                                                                                                        j    i
+                                                                                                                                               ⃒                (11)
+                 Δt                                                                                               δ                    yj − yi ⃒
+where u t+Δt is the modified displacement vector at time t + Δt, ut(i)
+        (i)
+                                                                                            where csh = 1.5c, and c is the micro-modulus of the material; d is the
+represents the displacement vector at time t, and Δt corresponds to the                     distance between material points j and i, which is defined by
+time increment.                                                                                    { ⃒          ⃒         }
+    At time t + Δt, the contribution of material point, x(i), to the reaction               d = min 0.9⃒xj − xi ⃒, 1.35Δx                                     (12)
+force from the target to the impactor, F(i) t + Δt, can be computed by
+                                                                                            with Δx being the grid spacing of the PD particles.
+                       (v t+Δt    t+Δt
+                          (i) − v(i) )
+ t+Δt
+F(i)  = −     1 × ρ(i)                 V(i)                                       (9)
+                               Δt
+                                                                                            2.3. Failure criterion considering the strain rate effect
+where vt+Δt
+       (i)  is the velocity vector at time t + Δt before relocating the
+material point i, and ρ(i) and V(i) are density and volume, respectively.                       The strain rate effect is one of primary dynamic features for concrete
+Summing the contributions of all material points inside the impactor                        materials (Bischoff and Perry, 1995; Malvar and Ross, 1998a). The range
+results in the total reaction force, Ft+Δt, on the impactor at time t + Δt,                 of strain rate of concrete material for different loading cases is sum­
+         ∑                                                                                  marized in Table 1, as suggested in the Comité Euro-International du
+F t+Δt =     t+Δt t+Δt
+            F(i) λ(i)                                                 (10)
+           i=1
+                                                                                            Béton, 1990. However, under seismic loading, the strain rate of steel
+                                                                                            materials is higher than 10-2 s− 1 (Yang, 1998). Thus, it is assumed that
+where λ(i)t+Δt is a scalar value. When the material point is inside the                     when the strain rate of RC structure is higher than 10-3 s− 1, the damage
+impactor, one can obtain the relationship of λ(i)t+Δt = 1. Otherwise,                       model of RC structure is rate-dependent. On the contrary, the strain rate
+                                                                                            effect is ignored.
+
+                                                                                        5
+H. Wang et al.                                                                                                                Computers and Geotechnics 143 (2022) 104625
+
+
+
+
+                  Fig. 7. The drop-weight impact test of a RC beam: (a) Experimental setup; (b) dimensions of the RC beam (Fu et al., 2020).
+
+
+
+
+                                          Shear plug
+
+
+
+
+                                                                                                         Fig. 9. The impact force–displacement curves.
+
+Fig. 8. Damage evolution of the RC beam subjected to impact loading: (a) 0.07       {
+ms; (b) 0.18 ms; (c) 20 ms (final); (d) crack patterns obtained from                    sc0 = fc /E ,    if   s<0
+the experiment.                                                                                                                                                    (13)
+                                                                                         st0 = ft /E ,   if   s⩾0
+
+    Referring to Wu et al. (2020) and Yu and Chen (2021), similar to the            where sc0 and st0 are the critical stretches in the compression and tension
+strain rate in classical continuum mechanics, the bond stretch rate ṡ is           cases, respectively; fc and ft are the uniaxial compressive strength and
+employed in the proposed PD dynamic model.                                          tensile strength, respectively. E is the elastic modulus.
+    For quasi-static failure of concrete or steel material (i.e., ṡ < 10-3             For dynamic failure of concrete material (i.e., ṡ ≥ 10-3 s− 1), the dy­
+s− 1), both the modes of tensile damage and compressive damage are                  namic increase factor (DIF), i.e., the ratio between dynamic and static
+considered,                                                                         strength, proposed in the CEB-FIP Model Code (1990) is added to the
+                                                                                    failure criterion to consider the strain rate effect herein. Then the bond-
+                                                                                    breaking model is rewritten as
+
+
+                                                                                6
+H. Wang et al.                                                                                                               Computers and Geotechnics 143 (2022) 104625
+
+
+                                                                                     s− 1 are the quasi-static compressive and tensile strain rate, respectively.
+                                                                                     a, γ, δ, η are the material constants, which are defined as a =
+                                                                                     (             )− 1
+                                                                                       5 + 0.75fcu      , logγ = 6.156a − 0.492, δ = (10 + fcu /2)− 1 , and logη =
+                                                                                     6.933δ − 0.492, where fcu is the unconfined compressive strength of
+                                                                                     cubical    concrete       specimen.   Ecd = (ṡc /3.0 × 10− 5 )0.026   and   Etd =
+                                                                                                   − 6 0.016
+                                                                                     (ṡt /3.0 × 10 )              are the dynamic compression and tensile elastic
+                                                                                     modulus, respectively.
+                                                                                            For dynamic failure of steel material, an exponential constitutive
+                                                                                     relationship (Malvar and Crawford, 1998b) is introduced,
+                                                                                     ⎧                 (       )ay
+                                                                                     ⎪
+                                                                                     ⎪                    ṡc      fc
+                                                                                     ⎪
+                                                                                     ⎪    scd,steel
+                                                                                                     =
+                                                                                     ⎪
+                                                                                     ⎪
+                                                                                     ⎨ 0                 10− 4     E
+                                                                                                       (      ) au
+                                                                                                                                                             (15)
+                                                                                     ⎪
+                                                                                     ⎪
+                                                                                     ⎪
+                                                                                     ⎪      td,steel      ṡt      f t
+                                                                                     ⎪
+                                                                                     ⎩ s0
+                                                                                     ⎪               =
+                                                                                                        10− 4      E
+
+
+          Fig. 10. Schematic diagram of rockfall (in two dimensions).                where scd,steel
+                                                                                            0        and std,steel
+                                                                                                          0        are the dynamic compressive and tensile critical
+                                                                                                                                                             f
+                                                                                     bond stretches for steel, respectively; ay = 0.074 − 0.04 414
+                                                                                                                                                ys
+                                                                                                                                                   , au =
+⎧      ⎧ ⎛ ⎞                                                                                          fys
+⎪
+⎪      ⎪             1.026a                                                          0.019 −   0.009 414  , fys is the quasi-static yield strength for steel (in this
+⎪      ⎪
+       ⎪
+⎪
+⎪
+⎪
+⎪
+       ⎪
+       ⎪
+       ⎪  ⎝   ṡc ⎠          fc
+                                   ṡc ⩽30s   − 1                                    study, it is set to be the uniaxial strength of the steel).
+⎪      ⎨ ε̇
+⎪
+⎪
+⎪  cd
+  s0 =
+                c0          Ecd                                                          The local damage level φ(x, t) at a material point is defined as the
+⎪
+⎪
+⎪
+⎪
+⎪
+       ⎪
+       ⎪
+       ⎪                                                                             ratio between the number of broken bonds and the total amount of
+⎪      ⎪    1/3 fc
+⎪
+⎪
+⎪
+       ⎪
+       ⎪
+       ⎩ γṡc                      ṡc > 30s− 1                                      bonds in its horizon.
+⎨                  Ecd
+                                                                                                   ∫
+       ⎧                                                                 (14)                          μ(η, ξ, t)dVx
+⎪
+⎪
+⎪
+⎪      ⎪
+       ⎪
+          ⎛ ⎞1.016δ                                                                  φ(x, t) = 1 − Hx ∫                                                  (16)
+⎪
+⎪      ⎪
+       ⎪       ṡt           ft                                                                             dVx
+⎪      ⎪                                                                                                 Hx
+⎪
+⎪
+⎪      ⎨ ⎝ε̇ ⎠
+       ⎪
+                            E
+                                   ṡt ⩽30s− 1
+⎪
+⎪
+⎪
+⎪ std
+   0 =
+                t0            td
+                                                                                         Note that the local damage level ranges from 0 to 1. Initially, all
+⎪      ⎪
+⎪
+⎪      ⎪
+       ⎪                                                                             interactions of material point x are intact, i.e., φ(x) = 0, while when all
+⎪
+⎪      ⎪
+       ⎪    1/3 ft
+⎪
+⎩      ⎪
+       ⎩ ηṡt                      ṡt > 30s− 1                                      bonds in its horizon are broken, it renders φ(x) = 1.
+                   Etd
+                                                                                         In the rockfall impact problem considered herein, the external work
+                                                                                     done by the impact loading is mainly converted into three parts: i)
+where scd        td
+         0 and s0 are the dynamic compressive and tensile critical bond              absorbed energy consumed by the cracking and fragmentation of the
+stretches for concrete, respectively. ṡc and ṡt are the compressive and
+                                                                                     concrete and yielding of the steel; ii) kinetic energy of the impactor and
+tensile strain rates, respectively.ε̇c0 = 3.0 × 10-5 s− 1 andε̇t0 = 3.0 × 10-6
+
+
+
+
+Fig. 11. Schematic diagram of rock sheds without backfills under rockfall impact: (a) geometry of the rock shed structure under different impact loadings; (b)
+numerical model.
+
+                                                                                 7
+H. Wang et al.                                                                                                                           Computers and Geotechnics 143 (2022) 104625
+
+
+
+
+Fig. 12. The simulation results predicted by the proposed model with δ = 0.15        Fig. 13. The simulation results predicted by the proposed model with m = 3
+m and different m values: (a) the crack patterns; (b) variations of the global       and different δ values: (a) the crack patterns; (b) variations of the global
+damage index ψ with the increasing of m values.                                      damage index ψ with the decreasing of δ values.
+
+the rock sheds; iii) energy loss due to material damping or surface                  2.4. Numerical implementation
+friction. Herein, the third one is assumed to be negligible and not
+considered. As for the first constituent, in the PD theory, the fracture                 The PD integral equations of motion can be evaluated by a single-
+nucleation, coalescence, and propagation are simulated through the                   point Gaussian quadrature scheme with meshfree particle discretiza­
+breakage of the physical bonds between two points in an irreversible                 tion (Silling and Askari, 2005). For a model spatially discretized into
+manner if the specified failure criterion is satisfied. Thus, the absorbed           material points, the PD equation of motion in Eq. (1) can be rewritten in
+energy as the consequence of the progressive rupture of bond networks                the discretized form as
+is considered through the proposed rate-dependent failure criterion. The
+kinetic energy can be naturally considered in the PD model because its                              ∑
+                                                                                                    n
+                                                                                     ρ(i) ü(i) =         f (u(j) − u(i) , x(j) − x(i) )V(j) + b(i)                           (17)
+governing equation holds either on or off of discontinuities such that the                          j=1
+kinetic variables can be still obtained even with multiple cracks or
+fragmentations in rock sheds. Therefore, the energy dissipation during               where n is the total number of material points in the horizon of material
+the impact process can be reasonably considered.                                     point i.
+    In addition, it should be noted that in this study we mainly focus on               For time integration, the Varlet-Velocity difference scheme is adop­
+applying the PD model to reveal the damage mechanism of the rock                     ted to update the velocity and displacement at time step n + 1 as
+sheds due to the rockfall impact under different conditions, rather than
+developing a complicated PD model taking full account of all factors                 u̇n+1     n          n
+                                                                                       (i) = ü(i) Δt + u̇(i)                                                                 (18)
+during the impact process as done in Yu and Chen (2021) and Zhu and
+Zhao (2021). Therefore, by referring to Wu et al. (2020), after some                 un+1     n+1       n
+                                                                                      (i) = u̇(i) Δt + u(i)                                                                   (19)
+modifications, in particular on the dynamic compression failure crite­
+rion, a relatively simple yet effective rate-dependent failure criterion is          where Δt is the time step, which should satisfy the stability condition to
+proposed herein.                                                                     keep the solution procedure stable (Silling and Askari, 2005).
+                                                                                        For the force and displacement boundary conditions, they can be
+                                                                                     applied to the proposed model as customary in other PD models. The
+
+
+                                                                                 8
+H. Wang et al.                                                                                                        Computers and Geotechnics 143 (2022) 104625
+
+
+
+
+                                    Fig. 14. Structural damage contours of rock sheds under a round falling rock impact.
+
+
+external traction force is transformed into the body force at first. The          and numerical predictions introduced by Ožbolt et al. (2013). The top
+resulting body force and the displacement constrains are applied on the           loading frame is fixed and the vertical loads with different loading rates,
+model through a real material layer and a fictitious boundary layer,              i.e., 0.035 m/s, 1.4 m/s and 4.3 m/s, are applied on the bottom loading
+respectively. The thicknesses of the layers are chosen as the radius of the       frame (see Fig. 5). For the concrete specimen, it features a Young’s
+horizon (i.e., δ). It is noted that in the bond-based peridynamics, the           modulus of E = 36 GPa, a density of ρ = 2400 kg/m3, a tensile strength of
+surface effect inducing by the incompleteness of the horizons of the              ft = 3.8 MPa and a compression strength of fc = 53 MPa. The 2D model is
+material points near the surfaces should be eliminated. Herein, the               discretized into 38,858 PD particles with a uniform grid spacing of Δx =
+surface correction factors based on the energy method are employed to             1.0 mm. The horizon size is set to δ = 3Δx. The time step is set to Δt = 2
+address this issue. More details about these techniques can be found in           × 10-7 s.
+Madenci and Oterkus (2014) and Le and Bobaru (2018).                                   The comparisons of the crack patterns obtained from the simulations
+   In addition, the updated Lagrangian formulation (Silling et al.,               and the experimental observations are shown in Fig. 6. It can be seen
+2017), i.e., the neighborhood of a material point is updated every step           that for the relative low loading rates (0.035 m/s), the crack propagates
+based on the deformed configuration, is employed in this study to                 almost perpendicular to the loading direction, which implies that it is in
+consider the high velocity impact process experiencing extensive dam­             the mode-I fracture mode. However, with increase of loading rate (1.40
+age and severe fragmentation.                                                     m/s, 4.30 m/s), the obtaining crack becomes more inclined and exhibits
+   The above solution scheme has been implemented in an in-house                  a mixed fracture mode. The predicted crack patterns of the proposed PD
+C++ program. The flowchart is illustrated in Fig. 4.                              model are found to be in good agreement with the FEM simulations
+                                                                                  using the smeared crack model and experimental observations (Ožbolt
+3. Assessment of the numerical method                                             et al., 2013). It is confirmed that the proposed PD model can simulate
+                                                                                  fracture behaviors of concrete under dynamic loads with different
+   To demonstrate its accuracy and effectiveness of simulating fracture           loading rates effectively.
+behaviors of concrete or RC materials under dynamic loads, the pro­
+posed PD model is applied to model two experimental tests in this                 3.2. The drop-weight impact test
+section.
+                                                                                      In this subsection, the drop-weight impact test of a RC beam con­
+3.1. The concrete compact tension specimen test                                   ducted by Fu et al. (2020) is employed to evaluate the effectiveness of
+                                                                                  the proposed method for capturing the damage characteristics of RC
+   The concrete compact tension specimen (CTS) test is simulated with             structure under impact. The experimental setup and the geometry
+the PD model and then compared with the experimental observations                 configuration of the RC beam are shown in Fig. 7. A drop hammer with a
+
+                                                                              9
+H. Wang et al.                                                                                                       Computers and Geotechnics 143 (2022) 104625
+
+
+
+
+                                  Fig. 15. Structural damage contours of rock sheds under an octagon falling rock impact.
+
+
+mass of 38.4 kg is dropped freely onto the top surface of the RC beam at          loading conditions are symmetry, but the spalling only appears in the
+the midspan to reach the impact velocity of 10.8 m/s. The striking head           right lower corner of the RC beam in the test. Inferred from this phe­
+of the drop hammer has a hemispherical tip with a radius of 60 mm. The            nomenon, the deviation is probably attributed to the fact that material
+RC beam specimen has dimensions of 70 mm in width, 100 mm in                      heterogeneities or some initial defects in the RC beam as well as other
+height, and 600 mm in length. The material parameters are taken from              non-deterministic factors in the experiment are not considered in the
+Fu et al. (2020). For concrete, it features a Young’s modulus of E = 25           numerical model.
+GPa, a density of ρ = 2400 kg/m3, a tensile strength of ft = 4.6 MPa and a
+compression strength of fc = 60 MPa. For steel bars, it has the properties        4. Scheme for parametric analysis
+with a Young’s modulus of E = 200 GPa, a density of ρ = 7750 kg/m3
+and a strength of ft = fc = 482 MPa (in both tension and compression).                The penetration ability of the impactor is mainly determined by its
+The 2D beam model is discretized into 9600 PD particles with a uniform            shape and impact energy (ER = mgh), which definitely has a significant
+grid spacing of Δx = 2.5 mm. The horizon size is set to δ = 3Δx. The time         effect on the damage characteristics of the target (Ben-Dor et al., 2003;
+step is set to be Δt = 2 × 10-7 s.                                                Mitrevski et al., 2005). Thus, various combinations of the shape, block
+    The crack patterns predicted by the numerical method at three                 mass (m), and release height (h) of the falling rock are considered to
+typical moments and measured from the experiment are shown in Fig. 8.             understand their effects on the damage characteristics of rock sheds
+As shown in Fig. 8a, the shear-failure mode can be observed at the mid-           without backfills.
+span of the beam, where some diagonal cracks initiate and propagate                   The surface morphology and corner distribution of falling rock are
+towards the bottom of the beam. Then a clear shear plug is formed under           considerably complicated (Fityus et al., 2013). To quantitatively
+the loading point. Also, local crushing of concrete near the loading point        describe the overall shape characteristics of rockfall, the sphericity is
+is observed in Fig. 8b. Eventually, a wide range of cracks appear at the          usually chosen as a representative index in three-dimensional analysis
+center of beam, in which steel reinforcements break due to the increased          for rockfall impact problems (Krumbein, 1941; Yang et al., 2018).
+tensile strain (Fig. 8c). The impact force–deflection curves of the simu­         Herein, a novel appearance index W, being specific to describe the
+lation and impact test are shown in Fig. 9. The impact force predicted by         morphology of rockfall for two dimensional analysis, is proposed,
+the numerical simulation is somewhat higher than the test result.
+                                                                                       CP
+    The numerical results predicted by the proposed model show an                 W=                                                                      (20)
+                                                                                       πD
+overall agreement with the experimental observation, although some
+deviations, such as the penetrate crack only appearing in the mid-span            where CP is the perimeter of the falling rock; D is the longest secant
+and the spalling of concrete in the lower right corner of the RC beam             between any two edge points as shown in Fig. 10.
+being not captured in the PD simulation, still exist. The boundary and               The schematic diagram of a falling rock is shown in Fig. 10. As W
+
+                                                                             10
+H. Wang et al.                                                                                                          Computers and Geotechnics 143 (2022) 104625
+
+
+
+
+                                    Fig. 16. Structural damage contours of rock sheds under a squared falling rock impact.
+
+
+increases, the shape of the falling rock gradually changes from triangular           numerical simulations, both the m-convergence and δ-convergence
+to circular. For instance, W = 0.83 represents an equilateral triangle,              studies are performed herein. The variable m is the ratio of the horizon
+while W = 1 denotes a perfect circle. Assuming that the falling rock                 size to the grid spacing of particles, that is, m = δ/Δx. For convergence
+impacts the structure in the vertical direction as shown in Fig. 10, that is,        analysis, all simulations are performed under the round falling rock
+unless otherwise specified, the rotation of the falling rock is not                  impact with a mass of 280 kg and a drop height of 30 m. In the m-
+considered. It can be seen that with the increase of W, the impact contact           convergence analysis, the value of δ = 0.15 m is set to be fixed whereas
+between rockfall and tunnel changes from the surface contact to the                  the value of m is increased from 2 to 5. To characterize the overall
+point contact. In this study, the shapes of falling rock are chosen to vary          structural damage degree of rock sheds under rockfall impact quanti­
+from a circle (W = 1), a regular octagon (W = 0.97), to a squared pattern            tatively, a global damage index ψ is defined as follows (Gao et al., 2020;
+(W = 0.9). The longest secant D is 1.2 m, 0.6 m, and 0.3 m, respectively.            Gao et al., 2021):
+According to engineering practices, the release height is selected as 30                  ∑N
+m, 65 m, and 100 m, respectively.                                                              φ(i, t)
+                                                                                     ψ = i=1                                                               (21)
+    A typical rock shed structure is analyzed numerically as shown in                          N
+Fig. 11. The height and the width of the tunnel are 10.2 m and 13.0 m,               where φ is the local damage level defined in Eq. (16); N is the total
+respectively. The diameter of the tunnel crown and invert is 5.8 m and               number of material points of the tunnel structure. ψ ranges from 0 to 1.
+13.0 m, respectively. The lining thickness is 0.7 m. For the circumfer­              when ψ = 1, the structure is completely destroyed. Hereafter, the
+ential reinforcement, the diameter of the steel bar is 22 mm, and its                damage index ψ is used to analyze the influence of factors on the damage
+protection layer thickness is 6 cm. The material parameters are defined              characteristics of the tunnel.
+as: (1) for concrete: Young’s modulus of E = 25 GPa, density of ρ = 2400                 The predicted crack patterns and variations of the global damage
+kg/m3, tensile strength of ft = 1.43 MPa and compression strength of fc              index with δ = 0.15 m and different m values are shown in Fig. 12. It is
+= 42 MPa; (2) for steel bar: Young’s modulus of E = 200 GPa, density of              observed that the crack patterns in the four numerical models with
+ρ = 8000 kg/m3 and strength of ft = fc = 360 MPa (in both tension and                different discretizations are similar. With the m increases, the damage
+compression). As illustrated in Fig. 11 (b), the model is discretized using          value gradually converges. Considering both the computational cost and
+uniformly distributed PD material points. The shed structure is fully                accuracy, m = 3 is chosen and it is used to perform the subsequent
+constrained at the bottom. The time step is set to be Δt = 2 × 10-6 s.               δ-convergence analysis. Numerical models with the fixed m = 3 and
+Varieties of simulation cases under different impact loading conditions              different horizon sizes δ = 0.3 m, δ = 0.15 m, δ = 0.075 m, δ = 0.0375 m
+(i.e., combinations of falling rock’s shape, mass and drop height) are               are respectively simulated, as shown in Fig. 13. It is demonstrated that
+performed.                                                                           the simulation results converge as δ decreases and the differences of the
+    In order to determine appropriate discretization parameters for the
+
+                                                                                11
+H. Wang et al.                                                                                                         Computers and Geotechnics 143 (2022) 104625
+
+
+
+
+                            Fig. 17. Structural damage contours of rock sheds under squared rockfall with different impact angles.
+
+
+
+
+                                              Fig. 18. Structural damage degree varies with the impact energy.
+
+
+predicted crack patterns and the damage indexes between these cases                heavily crushed zone near the contact area is observed. Vertical cracks
+are not significant. Therefore, in this study, the horizon size δ = 0.15 m         are symmetrically distributed on the top and bottom of the tunnel
+and m = 3, with the grid spacing △x being 0.05 m, are adopted.                     crown, and no transverse cracks can be monitored. For a heavier rockfall
+                                                                                   impact, i.e., mass = 280 kg or 2240 kg, the tunnel exhibits the shear
+5. Results and analysis                                                            failure mode clearly, and transverse cracks are observed on the corner
+                                                                                   and the inner surface of sidewall. Therefore, it is necessary to strengthen
+5.1. Damage characteristics                                                        the tunnel crown when the falling rock is relatively light. On the other
+                                                                                   hand, for a heavier falling rock, reinforcement should also be imple­
+   The structural damage contours under different impact loading                   mented in the sidewall.
+conditions are shown in Figs. 14–16, respectively. It can be seen that the             From the structural damage contours, it is obviously found that these
+damage of the tunnel mainly occurs in the crown, the sidewall and the              cases exhibit different structural damage degrees, which can be roughly
+corner of sidewall. For rockfall with a mass of 35 kg, local failure with a        classified into three categories, in terms of safe, danger and failure. The
+
+
+                                                                              12
+H. Wang et al.                                                                                                         Computers and Geotechnics 143 (2022) 104625
+
+
+                                                                                  and is penetrated by the falling rock. For instance, when the mass of
+                                                                                  rockfall is 280 kg and 2240 kg, the structure fails when the falling height
+                                                                                  is above 30 m, indicating that some mitigation measures are extremely
+                                                                                  needed. The proposed method is demonstrated to simulate the discrete
+                                                                                  crack patterns explicitly, being capable of evaluating the safety of the
+                                                                                  tunnel reasonably and providing insights into the dangerous position for
+                                                                                  strengthening.
+                                                                                      According to Mitrevski et al. (2005), the impact angle has a signifi­
+                                                                                  cant effect on the dynamic response of the target body. To evaluate the
+                                                                                  structural damage characteristic under the angular rockfall when the
+                                                                                  impact occurs on the vertex, simulations for the squared rockfall with
+                                                                                  different impact angles are performed (see Fig. 17). The simulation re­
+                                                                                  sults numerically evidence that the impact angle has a significant effect
+                                                                                  on the dynamic response of the RC shed structure. When contact area
+                                                                                  occurs on the edge of the impactor (0◦ , see Fig. 17 (a)), the damage
+                                                                                  degree and damage zone of the structure are the largest. When the
+                                                                                  impact occurs at the corner of the impactor with an angle of 15◦ (see
+      Fig. 19. Variation of the global damage index ψ with drop height.           Fig. 7 (b)), the impactor rotates after contacting the structure, causing
+                                                                                  local damage on the left side of the structure. As the impact angle in­
+                                                                                  creases, the structure damage pattern tends to be partially penetrated at
+                                                                                  the contact area (30◦ , see Fig. 7 (c)), especially when the falling rock hits
+                                                                                  the tunnel with an angle of 45◦ (see Fig. 7 (d)), the structure is fully
+
+
+
+
+     Fig. 20. Variation of the global damage index ψ with rockfall mass.
+
+
+mode of ‘safe’ means that no penetrating cracks occur in the structure.
+The mode of ‘danger’ refers to the case that penetrating cracks can be
+found in the structure but the falling rock does not penetrate through the
+tunnel crown. For the case of ‘failure’, the tunnel is extensively damaged        Fig. 22. Variation of the global damage index ψ with time (mass = 280 kg).
+
+
+
+
+                                            Fig. 21. Variation of the global damage index ψ with shape parameter.
+
+                                                                             13
+H. Wang et al.                                                                                                                                Computers and Geotechnics 143 (2022) 104625
+
+
+                                                                   30 m                      100 m                                          280 kg
+
+                                                                                                                 Step 300
+
+                                                                                                                                     Tunnel crown
+                                                                                          Shear plug             Step 450
+
+
+                                                               Shear plug                                        Step 1000
+
+                                                                                                                 Step 2100
+
+                                              0.08
+                                                                                                                                   100m             30m
+                                                         Stage 1            Stage 2                                 Stage 3
+
+
+                                              0.06
+                      Global damage index ψ
+
+
+
+
+                                              0.04
+
+
+
+
+                                              0.02
+
+
+
+
+                                              0.00
+                                                     0        2100                    7000         10000                                               20000
+                                                                                             Time step (2×10-6s)
+
+                                                           Fig. 23. Damage evolution process of rock sheds under a round falling rock impact.
+
+
+penetrated with a small damage zone. It is suggested that the structural                                  two shapes of falling rock. Having the same conditions, the squared and
+damage degree under the angular falling rock impact varies with its                                       octagon falling rock could yield almost the same damage degree of the
+impact angles, and the structure is more likely to be penetrated with a                                   tunnel. This is due to the fact that the tunnel could be easily penetrated
+sharp impact angle.                                                                                       by a round falling rock and the damage zone does not expand signifi­
+   The structural damage characteristics are significantly influenced by                                  cantly even though the impact energy increases. But when the tunnel is
+the mass (m) and drop height (h) of the rockfall. The mass (m) and the                                    subjected to a squared or octagon falling rock, a larger damage zone can
+drop height (h) of the rockfall jointly determine the impact energy (ER),                                 be obtained. This observation is consistent with the results given by Bai
+which is defined as                                                                                       et al. (2020) and Shen et al. (2019). Thus, the influence of falling rock’s
+                                                                                                          shape should not be ignored in the design of protection structures. Under
+ER = mgh                                                                                     (22)
+                                                                                                          the same condition, it is recommended to consider a round falling rock
+    The relationships between rockfall impact energy and structural                                       for evaluating the penetration resistance of the tunnel, while the overall
+damage ratio are shown in Fig. 18. It is observed that the structural                                     structural damage degree should be evaluated by a non-circular falling
+damage ratio almost linearly increases with the increase of impact en­                                    rock.
+ergy under the same mass. Under the smaller impact energy (≤280 kJ),
+the structural damage ratio grows faster as the impact energy increases.                                  5.2. Damage evolution process
+However, the tunnel subjected to higher impact energy does not
+necessarily have the higher structural damage ratio, for example, the                                         The damage evolution process of the tunnel under rockfall impact
+damage ratio of 280 kJ being large than that of 672 kJ (i.e., point A and                                 with a mass of 280 kg is presented in Fig. 22. At the early stage of impact
+B in Fig. 18). This is due to the fact that the failure modes and the                                     phase (0 ~ 2100 steps), the structural damage degree increases signif­
+absorbed energies of these two points are different.                                                      icantly. Then, a slower growth rate of structural damage degree is
+    Figs. 19 and 20 depict the variations of structural damage degree                                     observed from step 2100 to step 7000. Finally, the structural damage
+with drop height and mass of the falling rock, respectively. It is observed                               degree begins to stabilize at step 7000. Thus, according to the growth
+that the structural damage degree almost linearly increases with the                                      rate of structural damage degree, the structural damage evolution pro­
+increase of drop height under the same rockfall mass. Interestingly, the                                  cess can be divided into three stages. In stage 1 (0–2100 steps), impact
+structural damage degree grows fast initially, and then increases slowly                                  damage of the structure initiates with a linear growth rate. In stage 2
+with the increase of rockfall mass under the same drop height. In other                                   (2100–7000 steps), damage continues to develop with a slower
+words, the structural damage degree of the tunnel could increase with                                     nonlinear growth rate. In stage 3 (>7000 steps), the structure is pene­
+the increase of drop height and rockfall mass, but the resulting growth                                   trated by the falling rock completely, showing a reduced growth rate (a
+rate of damage degree differs.                                                                            plateau).
+    The structural damage degree varies with the appearance index (W)                                         Figs. 23 and 24 show the structural damage evolution process with
+under different impact energy as presented in Fig. 21. For the case with a                                visualized damage contours under the round and squared falling rock
+round falling rock, the damage index is always lower than with other                                      impact, respectively. In Fig. 23, four typical moments are selected in
+
+                                                                                                     14
+H. Wang et al.                                                                                                                                 Computers and Geotechnics 143 (2022) 104625
+
+
+                                                                    30 m                     100 m                                            280 kg
+
+                                                                                                                 Step 300
+
+                                                                                                                                      Tunnel crown
+                                                                                                                 Step 450
+
+
+                                                                                                                  Step 1000
+
+                                                                                                                  Step 2100
+
+                                               0.08
+                                                                                                                                    100 m            30 m
+                                                          Stage 1          Stage 2              Stage 3
+
+
+                                               0.06
+                       Global damage index ψ
+
+
+
+
+                                               0.04
+
+
+
+
+                                               0.02
+
+
+
+
+                                               0.00
+                                                      0       2100                    7000         10000                                                20000
+                                                                                             Time step (2×10-6s)
+
+                                                           Fig. 24. Damage evolution process of rock sheds under a squared failing rock impact.
+
+
+stage 1, namely the time step 300, 450, 1000 and 2100. For the struc­                                     6. Conclusions
+tural evolution process with a falling height of 30 m, local crushing of
+concrete near the impact point is firstly observed (step 300). At time step                                   In this study, a dynamic PD model with a relatively simple yet
+450, flexural cracks initiate in the bottom of the tunnel crown. From                                     effective failure criterion, which considers the strain rate effect and is
+time step 450 to 1000, diagonal cracks initiate near the impact point and                                 convenient for engineering applications, is proposed to study the dam­
+vertical cracks are observed. These diagonal cracks further form a clear                                  age behavior of rock sheds under rockfall impact. The accuracy and
+shear plug (see Fig. 23) under the tunnel crown (time step 2100). In                                      effectiveness of the proposed model are validated by two experimental
+stage 2, the bottom circumferential steel bar is fractured, and the                                       tests. The influence of different factors on the structural damage char­
+damaged blocks of the tunnel crown are gradually dislocated. The upper                                    acteristics of the tunnel, including the shape, mass and drop height of the
+circumferential steel bar is then stretched to break, and the failure area                                falling rock, is discussed. The main conclusions are drawn as follows:
+of the tunnel crown is completely dropped (stage 3). For a falling height                                     (1) Comparing against the concrete compact tension specimen test
+of 100 m, a vertical crack extends earlier to the bottom of the tunnel                                    and the drop-weight impact test of a RC beam, the proposed PD model
+crown (time step 300). At time step 450, two diagonal cracks initiate                                     with a relatively simple failure criterion considering the strain rate effect
+near the impact point. From time step 450 to 1000, these two diagonal                                     for RC materials is found to be capable of reproducing the crack patterns
+cracks form a shear plug under the tunnel crown (see Fig. 23). Then, two                                  and the damage evolution process of rock sheds under rockfall impact.
+more diagonal cracks initiate and further form a larger shear plug (time                                      (2) The tunnel crown and sidewall are two potential damage zones
+step 2100). Therefore, under the round falling rock impact, the modes of                                  under rockfall impact. Different impact conditions yield various damage
+local crush and flexural failure occur firstly in stage 1, and then the shear                             degrees of the tunnel. The proposed method can simulate the discrete
+failure mode manifests itself in stages 2 and 3, finally resulting in overall                             cracks explicitly, and is capable of evaluating the safety of the tunnel in a
+collapse of the tunnel. Also, when the drop height is higher, the shear                                   reasonable manner and providing insights into the damage position for
+failure mode in the tunnel is more obvious. For the squared falling rock                                  strengthening.
+impact, the damage evolution process is similar to that of the round                                          (3) The structural damage degree of the tunnel increases with the
+falling rock impact. However, more intense shear failure with more di­                                    increase of drop height and rockfall mass, but the resulting growth rate
+agonal cracks is found in this case (see Fig. 24). Consequently, more                                     differs. The tunnel is easily penetrated by a round falling rock and the
+dropping parts are formed when the tunnel is sheared by the squared                                       damage zone does not expand significantly even though the impact
+falling rock. In addition, the squared falling rock impact induces a larger                               energy increases. When the tunnel is subjected to a squared or an
+damage zone and a higher damage index at the same calculation time                                        octagon falling rock, a larger damage zone can be derived. The structural
+step, compared with the case under the round falling rock impact.                                         damage degree under the angular falling rock impact varies with its
+                                                                                                          impact angles and the structure is more likely to be penetrated with a
+                                                                                                          sharp impact angle. Thus, under the same condition, it is recommended
+                                                                                                          to use a round falling rock to evaluate the penetration resistance of the
+
+
+                                                                                                     15
+H. Wang et al.                                                                                                                                  Computers and Geotechnics 143 (2022) 104625
+
+
+tunnel, while the overall structural damage degree should be evaluated                             Demmie, P., Silling, S., 2007. An approach to modeling extreme loading of structures
+                                                                                                        using peridynamics. J. Mech. Mater. Struct. 2 (10), 1921–1945.
+by a non-circular falling rock.
+                                                                                                   ETAG, E., 2008. 027-Guideline for the European Technical Approval of Falling Rock
+    (4) The structural damage evolution process can be classified into                                  Protection Kits. EOTA: Brusseles, Belgium.
+three stages. The modes of local crush and flexural failure occur firstly in                       Fityus, S.G., Giacomini, A., Buzzi, O., 2013. The significance of geology for the
+stage 1, and then the shear failure mode manifests itself in stages 2 and                               morphology of potentially unstable rocks. Eng. Geol. 162, 43–52.
+                                                                                                   Fu, Y., Yu, X., Dong, X., Zhou, F., Ning, J., Li, P., Zheng, Y., 2020. Investigating the
+3, finally resulting in overall collapse of the tunnel. When the drop                                   failure behaviors of RC beams without stirrups under impact loading. Int. J. Impact
+height is higher, the shear failure mode in the tunnel is more obvious.                                 Eng. 137, 103432. https://doi.org/10.1016/j.ijimpeng.2019.103432.
+Also, intense shear failure with more diagonal cracks and more dropping                            Gerstle, W., Sau, N., Silling, S., 2007. Peridynamic modeling of concrete structures. Nucl.
+                                                                                                        Eng. Des. 237 (12-13), 1250–1258.
+parts are observed, when the tunnel is sheared by a squared falling rock.                          Gao, C., Zhou, Z., Li, Z., Li, L., Cheng, S., 2020. Peridynamics simulation of surrounding
+    (5) The structural damage degree of the tunnel is an effective factor,                              rock damage characteristics during tunnel excavation. Tunn. Undergr. Space
+being comprehensively affected by the shape, mass and drop height of                                    Technol. 97, 103289. https://doi.org/10.1016/j.tust.2020.103289.
+                                                                                                   Gao, C., Li, L., Zhou, Z., Li, Z., Cheng, S., Wang, L., Zhang, D., 2021. Peridynamics
+the falling rock. Therefore, the method that simplifies the impact force                                Simulation of Water Inrush Channels Evolution Process Due to Rock Mass
+as a static load in the existing design guidelines, such as Japan Road                                  Progressive Failure in Karst Tunnels. Int. J. Geomech. 21 (4), 04021028. https://doi.
+Association (JRA), 1983 and ETAG (2008), is not enough to assess the                                    org/10.1061/(ASCE)GM.1943-5622.0001980.
+                                                                                                   Hu, J., Li, S., Li, L., Shi, S., Zhou, Z., Liu, H., He, P., 2018. Field, experimental, and
+resistance of rock sheds subjected to rockfall hazards accurately.                                      numerical investigation of a rockfall above a tunnel portal in southwestern China.
+    Further research considering more complex conditions, such as                                       B. Eng. Geol. Environ. 77 (4), 1365–1382.
+developing more accurate dynamic PD models, as well as the three-                                  Hu, J., Li, S., Shi, S., Zhang, J., Xian, G., 2019. Development and application of a model
+                                                                                                        test system for rockfall disaster study on tunnel heading slope. Environ. Earth. Sci.
+dimensional scenario, will be conducted in the future.
+                                                                                                        78 (14), 1–14.
+                                                                                                   Huang, X., Kong, X., Chen, Z., Fang, Q., 2021. Peridynamics modelling of dynamic tensile
+CRediT authorship contribution statement                                                                failure in concrete. Int. J. Impact Eng. 155, 103918. https://doi.org/10.1016/j.
+                                                                                                        ijimpeng.2021.103918.
+                                                                                                   Isiet, M., Mišković, I., Mišković, S., 2021. Review of peridynamic modelling of material
+   Haibo Wang: Methodology, Software, Validation, Formal analysis,                                      failure and damage due to impact. International Journal of Impact Engineering. 147,
+Investigation, Data curation, Writing – original draft, Visualization.                                  103740. https://doi.org/10.1016/j.ijimpeng.2020.103740.
+Chengchao Guo: Resources, Supervision, Project administration,                                     Japan Road Association (JRA),1983. Rockfall Handbook. Tokyo: Maruzen Publisher
+                                                                                                        (Japan): 1–359.
+Funding acquisition. Fuming Wang: Resources, Supervision, Project                                  Krumbein, W.C., 1941. Measurement and geological significance of shape and roundness
+administration, Funding acquisition. Pengpeng Ni: Validation, Re­                                       of sedimentary particles. J. Sediment. Res. 11 (2), 64–72.
+sources, Writing – review & editing, Project administration, Funding                               Kawahara, S., Muro, T., 2006. Effects of dry density and thickness of sandy soil on impact
+                                                                                                        response due to rockfall. J. Terramechanics. 43 (3), 329–340.
+acquisition. Wei Sun: Conceptualization, Methodology, Software,                                    Le, Q.V., Bobaru, F., 2018. Surface corrections for peridynamic models in elasticity and
+Validation, Formal analysis, Resources, Writing – review & editing,                                     fracture. Computational Mechanics 61 (4), 499–518.
+Supervision, Project administration, Funding acquisition.                                          Liu, N., Liu, D., Zhou, W.u., 2017. Peridynamic modelling of impact damage in three-
+                                                                                                        point bending beam with offset notch. Appl. Math. Mech-Engl. 38 (1), 99–110.
+                                                                                                   Luo, F., Zhou, X., Wang, Y., Zhang, F.L., 2018. Experimental study on rockfall impact
+Declaration of Competing Interest                                                                       force applied to frame shed tunnels. Journal of highway and transportation research
+                                                                                                        and development (English version). 12 (2), 59–66 in Chinese.
+                                                                                                   Ma, K.e., Liu, G., Xu, N., Zhang, Z., Feng, B.o., 2021. Motion characteristics of rockfall by
+    The authors declare that they have no known competing financial
+                                                                                                        combining field experiments and 3D discontinuous deformation analysis.
+interests or personal relationships that could have appeared to influence                               International Journal of Rock Mechanics and Mining Sciences. 138, 104591. https://
+the work reported in this paper.                                                                        doi.org/10.1016/j.ijrmms.2020.104591.
+                                                                                                   Malvar, L.J., Ross, C.A., 1998. Review of strain rate effects for concrete in tension. Aci.
+                                                                                                        Mater. J. 95 (6), 735–739.
+Acknowledgements                                                                                   Malvar, L. J., Crawford, J. E., 1998b. Dynamic increase factors for concrete. Twenty-
+                                                                                                        eighth DDESB Seminar. Orlando, FL.
+   The work is financially supported by the National Natural Science                               Mougin, J.-P., Perrotin, P., Mommessin, M., Tonnelo, J., Agbossou, A., 2005. Rock fall
+                                                                                                        impact on reinforced concrete slab: an experimental approach. Int. J. Impact Eng. 31
+Foundation of China (52109145, 52078506), the Guangdong Basic and                                       (2), 169–183.
+Applied Basic Research Foundation (2020A1515110672) and the Open                                   Mitrevski, T., Marshall, I.H., Thomson, R., Jones, R., Whittingham, B., 2005. The effect of
+Research Fund Program of State key Laboratory of Hydroscience and                                       impactor shape on the impact response of composite laminates. Compos. Struct. 67
+                                                                                                        (2), 139–148.
+Engineering (sklhse-2021-D-04).                                                                    Madenci, E., Oterkus, E., 2014. Peridynamic Theory and Its Applications. Springer New
+                                                                                                        York.
+References                                                                                         Oterkus, E., Guven, I., Madenci, E., 2012. Impact damage assessment by using
+                                                                                                        peridynamic theory. Cent. Eur. J Energ. Mat. 2 (4), 523–531.
+                                                                                                   Ožbolt, J., Bošnjak, J., Sola, E., 2013. Dynamic fracture of concrete compact tension
+Agliardi, F., Crosta, G.B., 2003. High resolution three-dimensional numerical modelling
+                                                                                                        specimen: Experimental and numerical study. Int J Solids Struct. 50 (25-26),
+     of rockfalls. Int. J. Rock Mech. Min. Sci. 40 (4), 455–471.
+                                                                                                        4270–4278.
+Amani, J., Oterkus, E., Areias, P., Zi, G., Nguyen-Thoi, T., Rabczuk, T., 2016. A non-
+                                                                                                   Ouyang, C., Liu, Y., Wang, D., He, S., 2019. Dynamic analysis of rockfall impacts on
+     ordinary state-based peridynamics formulation for thermoplastic fracture. Int. J.
+                                                                                                        geogrid reinforced soil and EPS absorption cushions. KSCE J. Civ. Eng. 23 (1), 37–45.
+     Impact Eng. 87, 83–94.
+                                                                                                   Parks, M.L., Lehoucq, R.B., Plimpton, S.J., Silling, S.A., 2008. Implementing
+Bischoff, P.H., Perry, S.H., 1995. Impact Behavior of Plain Concrete Loaded in Uniaxial
+                                                                                                        peridynamics within a molecular dynamics code. Computer Physics Communications
+     Compression. J. Eng. Mech. 121 (6), 685–693.
+                                                                                                        179 (11), 777–783.
+Ben-Dor, G., Dubinsky, A., Elperin, T., 2003. Shape optimization of impactor penetrating
+                                                                                                   Sau, N., Medina-Mendoza, J., Borbon-Almada, A.C., 2019. Peridynamic modelling of
+     into concrete or limestone targets. Int. J Solids. Struct. 40 (17), 4487–4500.
+                                                                                                        reinforced concrete structures. Eng. Fail. Anal. 103, 266–274.
+Budetta, P., 2004. Assessment of rockfall risk along roads. Nat. Hazards. Earth. Syst. Sci.
+                                                                                                   Shi, G.-H., Goodman, R.E., 1989. Generalization of two-dimensional discontinuous
+     4 (1), 71–81.
+                                                                                                        deformation analysis for forward modelling. Int. J. Numer. Anal. Methods Geomech.
+Bhatti, A. Q., Kishi, N., Shad, K. U. R., 2008. A numerical investigation for rock fall
+                                                                                                        13 (4), 359–380.
+     impact behavior of pithead of tunnel with falling weight impact loading. In: 10th
+                                                                                                   Shi, G.H., 1991. Manifold method of material analysis. Trans. 9th Army Conf. on Appl.
+     International LS-DYNA Users Conference.
+                                                                                                        Math. and Comp. Rep No. 92–1.
+Bourrier, F., Nicot, F., Darve, F., 2010. Evolution of the micromechanical properties of
+                                                                                                   Silling, S.A., 2000. Reformulation of elasticity theory for discontinuities and long-range
+     impacted granular materials. C. R. Mec. 338 (10-11), 639–647.
+                                                                                                        forces. J. Mech. Phys. Solids. 48 (1), 175–209.
+Bai, X.S., Li, J.F., Qi, X.B., Chen, H.Q., Liu, H.Y., 2020. Study on dynamic response of
+                                                                                                   Silling, S.A., Askari, E., 2005. A meshfree method based on the peridynamic model of
+     shed-tunnel structure under rockfall impact. J. Highw. Transp. Res. Dev. 37 (08),
+                                                                                                        solid mechanics. Comput. Struct. 83 (17-18), 1526–1535.
+     73–80 in Chinese.
+                                                                                                   Silling, S.A., Parks, M.L., Kamm, J.R., Weckner, O., Rassaian, M., 2017. Modeling
+Calvetti, F., Di prisco, C., 2012. Rockfall impacts on sheltering tunnels: real-scale
+                                                                                                        shockwaves and impact phenomena with Eulerian peridynamics. Int. J. Impact. Eng.
+     experiments. Géotechnique. 62 (10), 865–876.
+                                                                                                        107, 47–57.
+Chen, B., Liu, N., Yang, G., 2015. The application of peridynamics in predicting beam
+                                                                                                   Sun, C., Huang, Z., 2016. Peridynamic simulation to impacting damage in composite
+     vibration and impact damage. J. Vibroeng. 17 (5), 2369–2378.
+                                                                                                        laminate. Compos. Struct. 138 (mar.), 335–341.
+Comité Euro-International du Béton, 1990. CEB-FIP model code 1990. Thomas Telford
+     Publishing, Lausanne, Design code.
+
+
+                                                                                              16
+H. Wang et al.                                                                                                                               Computers and Geotechnics 143 (2022) 104625
+
+Shen, W., Zhao, T., Dai, F., Jiang, M., Zhou, G.G.D., 2019. DEM analyses of rock block           Yu, P., Zhang, Y., Peng, X., Wang, J., Chen, G., Zhao, J.X., 2019. Evaluation of impact
+    shape effect on the response of rockfall impact against a soil buffering layer. Eng.             force of rock landslides acting on structures using discontinuous deformation
+    Geol. 249, 60–70.                                                                                analysis. Computers and Geotechnics 114, 103137. https://doi.org/10.1016/j.
+Sun, W., Zhang, G.a., Zhang, Z., 2021. Damage analysis of the cut-off wall in a landslide            compgeo.2019.103137.
+    dam based on centrifuge and numerical modeling. Comput. Geotech. 130, 103936.                Zhang, L., Nguyen, N.G.H., Lambert, S., Nicot, F., Prunier, F., Djeran-Maigre, I., 2017.
+    https://doi.org/10.1016/j.compgeo.2020.103936.                                                   The role of force chains in granular materials: from statics to dynamics. Eur. J.
+Wang, Y., Zhou, X., Wang, Y., Shou, Y., 2018. A 3-D conjugated bond-pair-based                       Environ. Civil. Eng. 21 (7-8), 874–895.
+    peridynamic formulation for initiation and propagation of cracks in brittle solids.          Zhao, P., Xie, L., Li, L., Liu, Q., Yuan, S., 2018. Large-scale rockfall impact experiments
+    International Journal of Solids and Structures 134, 89–115.                                      on a RC rock-shed with a newly proposed cushion layer composed of sand and EPE.
+Wu, L., Huang, D., Xu, Y., Wang, L., 2020. A rate-dependent dynamic damage model in                  Eng. Struct. 175, 386–398.
+    peridynamics for concrete under impact loading. Int. J. Damage Mech. 29 (7),                 Zhang, Y., Deng, J., Deng, H., Ke, B.o., 2019. Peridynamics simulation of rock fracturing
+    1035–1058.                                                                                       under liquid carbon dioxide blasting. Int. J. Damage Mech. 28 (7), 1038–1052.
+Yan, P., Zhang, J., Fang, Q., Zhang, Y., 2018. Numerical simulation of the effects of            Zheng, L.u., Chen, G., Li, Y., Zhang, Y., Kasama, K., 2014. The slope modeling method
+    falling rock’s shape and impact pose on impact force and response of RC slabs.                   with GIS support for rockfall analysis using 3D DDA. Geomech. Geoeng. Int. J. 9 (2),
+    Constr. Build. Mater. 160, 497–504.                                                              142–152.
+Yan, S. X., He, Si. M., Li, X. P., 2019. Dynamic responses and punching damage                   Zhu, F., Zhao, J., 2021. Peridynamic modelling of blasting induced rock fractures.
+    assessment of a reinforced concrete slab impacted by rock-falls. Journal of Lanzhou              Journal of the Mechanics and Physics of Solids. 153, 104469. https://doi.org/
+    University: Natural Sciences. 55(1), February (in Chinese).                                      10.1016/j.jmps.2021.104469.
+Yu, H., Chen, X., 2021. A viscoelastic micropolar peridynamic model for quasi-brittle
+    materials incorporating loading-rate effects. Comput. Methods Appl. Mech. Engrg.
+    383, 113897. https://doi.org/10.1016/j.cma.2021.113897.
+
+
+
+
+                                                                                            17
+

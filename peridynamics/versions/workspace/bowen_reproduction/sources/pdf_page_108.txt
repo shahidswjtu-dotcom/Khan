@@ -1,0 +1,50 @@
+西南交通大学硕士学位论文 
+91 
+ 
+        pforce33(i,1) = pforce33(i,1) + dforce1 
+        pforce33(i,2) = pforce33(i,2) + dforce2 
+        pforce33(i,3) = pforce33(i,3) + dforce3 
+ 
+        pforce33(cnode1,1) = pforce33(cnode1,1) + N1(i,j) * (-1.0d0) * dforce1 
+        pforce33(cnode1,2) = pforce33(cnode1,2) + N1(i,j) * (-1.0d0) * dforce2 
+        pforce33(cnode1,3) = pforce33(cnode1,3) + N1(i,j) * (-1.0d0) * dforce3 
+ 
+        pforce33(cnode2,1) = pforce33(cnode2,1) + N2(i,j) * (-1.0d0) * dforce1 
+        pforce33(cnode2,2) = pforce33(cnode2,2) + N2(i,j) * (-1.0d0) * dforce2 
+        pforce33(cnode2,3) = pforce33(cnode2,3) + N2(i,j) * (-1.0d0) * dforce3 
+ 
+        pforce33(cnode3,1) = pforce33(cnode3,1) + N3(i,j) * (-1.0d0) * dforce1 
+        pforce33(cnode3,2) = pforce33(cnode3,2) + N3(i,j) * (-1.0d0) * dforce2 
+        pforce33(cnode3,3) = pforce33(cnode3,3) + N3(i,j) * (-1.0d0) * dforce3 
+ 
+        pforce33(cnode4,1) = pforce33(cnode4,1) + N4(i,j) * (-1.0d0) * dforce1 
+        pforce33(cnode4,2) = pforce33(cnode4,2) + N4(i,j) * (-1.0d0) * dforce2 
+        pforce33(cnode4,3) = pforce33(cnode4,3) + N4(i,j) * (-1.0d0) * dforce3 
+ 
+        pforce33(cnode5,1) = pforce33(cnode5,1) + N5(i,j) * (-1.0d0) * dforce1 
+        pforce33(cnode5,2) = pforce33(cnode5,2) + N5(i,j) * (-1.0d0) * dforce2 
+        pforce33(cnode5,3) = pforce33(cnode5,3) + N5(i,j) * (-1.0d0) * dforce3 
+ 
+        pforce33(cnode6,1) = pforce33(cnode6,1) + N6(i,j) * (-1.0d0) * dforce1 
+        pforce33(cnode6,2) = pforce33(cnode6,2) + N6(i,j) * (-1.0d0) * dforce2 
+        pforce33(cnode6,3) = pforce33(cnode6,3) + N6(i,j) * (-1.0d0) * dforce3 
+ 
+        pforce33(cnode7,1) = pforce33(cnode7,1) + N7(i,j) * (-1.0d0) * dforce1 
+        pforce33(cnode7,2) = pforce33(cnode7,2) + N7(i,j) * (-1.0d0) * dforce2 
+        pforce33(cnode7,3) = pforce33(cnode7,3) + N7(i,j) * (-1.0d0) * dforce3 
+ 
+        pforce33(cnode8,1) = pforce33(cnode8,1) + N8(i,j) * (-1.0d0) * dforce1 
+        pforce33(cnode8,2) = pforce33(cnode8,2) + N8(i,j) * (-1.0d0) * dforce2 
+        pforce33(cnode8,3) = pforce33(cnode8,3) + N8(i,j) * (-1.0d0) * dforce3 
+ 
+        ! 失效判定 
+            if ((nlength - idist) / idist > sc) then 
+                failfail(i,j) = 0 
+            endif 
+ 
+        dmgpar1 = dmgpar1 + failfail(i,j) * vol 
+        dmgpar2 = dmgpar2 + vol 
+    enddo 
+ 
+    dmg(i,1) = 1.0d0 - dmgpar1 / dmgpar2 
+enddo

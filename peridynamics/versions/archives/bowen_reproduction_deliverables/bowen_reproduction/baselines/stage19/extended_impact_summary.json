@@ -1,0 +1,11 @@
+{
+  "mode": "conservative",
+  "steps_completed": 550,
+  "first_contact": 341,
+  "safety_stop": null,
+  "max_recorded_force_kN": 208.83902793749814,
+  "max_concrete_mm": 1.584030766835752,
+  "max_steel_mm": 0.002218410738845336,
+  "elapsed_seconds": 19.05,
+  "interpretation": "diagnostic only; interface normalization and material constants not Bowen-verified"
+}

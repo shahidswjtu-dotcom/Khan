@@ -1,0 +1,26 @@
+[
+  {
+    "name": "gfortran-14",
+    "version": "14.2.0-19",
+    "url": "https://deb.debian.org/debian/pool/main/g/gcc-14/gfortran-14_14.2.0-19_amd64.deb",
+    "sha256": "843ad332a9ffbc0b6093e9cb5cfc25424fb6e756f270ed180299367dfc3ef533"
+  },
+  {
+    "name": "gfortran-14-x86-64-linux-gnu",
+    "version": "14.2.0-19",
+    "url": "https://deb.debian.org/debian/pool/main/g/gcc-14/gfortran-14-x86-64-linux-gnu_14.2.0-19_amd64.deb",
+    "sha256": "520b3283edc193b75644d655654834662f56f9006a78751d91feb882b74ca684"
+  },
+  {
+    "name": "libgfortran-14-dev",
+    "version": "14.2.0-19",
+    "url": "https://deb.debian.org/debian/pool/main/g/gcc-14/libgfortran-14-dev_14.2.0-19_amd64.deb",
+    "sha256": "8460dfd941d9f60e92516e5c4e3f8bb08e60983e7526f376a7c87969a8a2dbfb"
+  },
+  {
+    "name": "libgfortran5",
+    "version": "14.2.0-19",
+    "url": "https://deb.debian.org/debian/pool/main/g/gcc-14/libgfortran5_14.2.0-19_amd64.deb",
+    "sha256": "11b62b53f4704de557e44b510e18a1a2106bcd9a3fc31a475a45952a9aa3dbb2"
+  }
+]

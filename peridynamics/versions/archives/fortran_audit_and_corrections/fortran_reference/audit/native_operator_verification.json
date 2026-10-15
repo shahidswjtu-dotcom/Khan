@@ -1,0 +1,80 @@
+{
+  "original_bytes_sha256": "99d6a1b962a883d4ac181a23066ae140889cd53a957ebdb9050c155a376aaeca",
+  "normalized_source_sha256": "5f5ce0b7c54203b662f9b06e9a8535fad813cf77bb15d55a277a0c8f3e6481ee",
+  "passed_native_compiled_tests": [
+    "test_native_yielded_rod_internal_force_balance",
+    "test_native_corrected_rod_preserves_existing_transverse_accumulator",
+    "test_native_pre_yield_and_compression_are_unchanged",
+    "test_native_interface_action_reaction_and_virtual_work",
+    "test_native_contact_reaction_uses_contacted_node_mass",
+    "test_native_support_constraints_reset_only_constrained_velocity",
+    "test_native_frictionless_cylinder_preserves_tangential_motion_and_mass_reaction"
+  ],
+  "original_yielded_rod_physical_force_N": [
+    [
+      220754.56,
+      0.0,
+      0.0
+    ],
+    [
+      -220754.56,
+      -220754.56,
+      -220754.56
+    ]
+  ],
+  "corrected_yielded_rod_physical_force_N": [
+    [
+      220754.56,
+      0.0,
+      0.0
+    ],
+    [
+      -220754.56,
+      0.0,
+      0.0
+    ]
+  ],
+  "original_interface_net_force_N": [
+    3223.5399999999972,
+    -6447.0799999999945,
+    9670.619999999999
+  ],
+  "corrected_interface_net_force_N": [
+    0.0,
+    0.0,
+    3.637978807091713e-12
+  ],
+  "original_contact_steel_reaction_N": [
+    -4572.666666666666,
+    0.0,
+    -9716.916666666668
+  ],
+  "corrected_contact_steel_reaction_N": [
+    -21106.117066666666,
+    0.0,
+    -44850.498766666664
+  ],
+  "original_full_contact_steel_disp_vel_reaction": [
+    0.00045267873021259274,
+    0.0,
+    0.00397946603233852,
+    150.89291007086425,
+    0.0,
+    1326.4886774461734,
+    -860763.9751467147,
+    0.0,
+    -7578558.698836086
+  ],
+  "corrected_full_contact_steel_disp_vel_reaction": [
+    0.00045267873021259274,
+    0.007,
+    0.00397946603233852,
+    150.89291007086425,
+    0.4,
+    1326.4886774461734,
+    -3973039.4867070825,
+    0.0,
+    -34980452.05443347
+  ],
+  "build_directory": "/workspace/Khan/fortran_reference/audit/native_operator_build"
+}

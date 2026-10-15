@@ -1,0 +1,1286 @@
+[
+  {
+    "file": "Bowen_RC_Chapter3_Stage19_Extended_Impact.ipynb",
+    "sha256": "004e2892a070b3d440461aaedad57aaadac65fa32563bd04ced0517ae4632ff7",
+    "cells": 128,
+    "syntax_errors": [],
+    "definitions": [
+      {
+        "cell": 3,
+        "name": "Parameters"
+      },
+      {
+        "cell": 11,
+        "name": "c_weighted"
+      },
+      {
+        "cell": 18,
+        "name": "normal_concrete_difs"
+      },
+      {
+        "cell": 18,
+        "name": "thresholds_at_rate"
+      },
+      {
+        "cell": 18,
+        "name": "micromodulus"
+      },
+      {
+        "cell": 20,
+        "name": "bond_scalar_force"
+      },
+      {
+        "cell": 20,
+        "name": "BondHistory"
+      },
+      {
+        "cell": 20,
+        "name": "__init__"
+      },
+      {
+        "cell": 20,
+        "name": "update"
+      },
+      {
+        "cell": 29,
+        "name": "njit"
+      },
+      {
+        "cell": 33,
+        "name": "accumulate_unique_pairs"
+      },
+      {
+        "cell": 33,
+        "name": "DiscretePDConcrete"
+      },
+      {
+        "cell": 33,
+        "name": "__init__"
+      },
+      {
+        "cell": 33,
+        "name": "evaluate"
+      },
+      {
+        "cell": 33,
+        "name": "damage"
+      },
+      {
+        "cell": 42,
+        "name": "concrete_grid_eight"
+      },
+      {
+        "cell": 44,
+        "name": "rod_forces"
+      },
+      {
+        "cell": 44,
+        "name": "coupling_forces"
+      },
+      {
+        "cell": 54,
+        "name": "sphere_contact"
+      },
+      {
+        "cell": 58,
+        "name": "apply_supports"
+      },
+      {
+        "cell": 58,
+        "name": "system_forces"
+      },
+      {
+        "cell": 58,
+        "name": "reset_concrete_history"
+      },
+      {
+        "cell": 58,
+        "name": "run_impact"
+      },
+      {
+        "cell": 69,
+        "name": "coupling_potential"
+      },
+      {
+        "cell": 74,
+        "name": "AppendixCInterfaceParameters"
+      },
+      {
+        "cell": 75,
+        "name": "AppendixCPDROD"
+      },
+      {
+        "cell": 75,
+        "name": "__init__"
+      },
+      {
+        "cell": 75,
+        "name": "evaluate"
+      },
+      {
+        "cell": 75,
+        "name": "reset"
+      },
+      {
+        "cell": 78,
+        "name": "bowen_concrete_force_with_modulus_DIF"
+      },
+      {
+        "cell": 81,
+        "name": "SourceShapeConcrete"
+      },
+      {
+        "cell": 81,
+        "name": "reset_stage8"
+      },
+      {
+        "cell": 81,
+        "name": "source_shaped_forces"
+      },
+      {
+        "cell": 81,
+        "name": "evaluate"
+      },
+      {
+        "cell": 85,
+        "name": "run_stage8"
+      },
+      {
+        "cell": 94,
+        "name": "_fast_concrete_kernel"
+      },
+      {
+        "cell": 94,
+        "name": "FastConcrete"
+      },
+      {
+        "cell": 94,
+        "name": "__init__"
+      },
+      {
+        "cell": 94,
+        "name": "reset"
+      },
+      {
+        "cell": 94,
+        "name": "evaluate"
+      },
+      {
+        "cell": 96,
+        "name": "_fast_pdrod_kernel"
+      },
+      {
+        "cell": 96,
+        "name": "FastInterface"
+      },
+      {
+        "cell": 96,
+        "name": "__init__"
+      },
+      {
+        "cell": 96,
+        "name": "reset"
+      },
+      {
+        "cell": 96,
+        "name": "evaluate"
+      },
+      {
+        "cell": 97,
+        "name": "fast_system_forces"
+      },
+      {
+        "cell": 97,
+        "name": "run_fast_impact"
+      },
+      {
+        "cell": 101,
+        "name": "diagnostic_run"
+      },
+      {
+        "cell": 104,
+        "name": "AppendixCParameters"
+      },
+      {
+        "cell": 104,
+        "name": "AppendixCPublishedKernel"
+      },
+      {
+        "cell": 104,
+        "name": "__init__"
+      },
+      {
+        "cell": 104,
+        "name": "evaluate"
+      },
+      {
+        "cell": 104,
+        "name": "reset"
+      },
+      {
+        "cell": 109,
+        "name": "source_c_force"
+      },
+      {
+        "cell": 109,
+        "name": "run_stage14"
+      },
+      {
+        "cell": 109,
+        "name": "forces"
+      },
+      {
+        "cell": 112,
+        "name": "normalized_acceleration"
+      },
+      {
+        "cell": 113,
+        "name": "stage17_components"
+      },
+      {
+        "cell": 113,
+        "name": "stage17_run"
+      },
+      {
+        "cell": 113,
+        "name": "force_step"
+      },
+      {
+        "cell": 118,
+        "name": "_stage18_pdrod_conservative"
+      },
+      {
+        "cell": 118,
+        "name": "conservative_interface"
+      },
+      {
+        "cell": 120,
+        "name": "stage18_run"
+      },
+      {
+        "cell": 120,
+        "name": "forces"
+      }
+    ]
+  },
+  {
+    "file": "Bowen_RC_Chapter3_Stage18_Conservative_PDROD.ipynb",
+    "sha256": "5ad33940077ab337f0864f105193fa1942330e25cdb3cbc1ce69eede1bb76960",
+    "cells": 123,
+    "syntax_errors": [],
+    "definitions": [
+      {
+        "cell": 3,
+        "name": "Parameters"
+      },
+      {
+        "cell": 11,
+        "name": "c_weighted"
+      },
+      {
+        "cell": 18,
+        "name": "normal_concrete_difs"
+      },
+      {
+        "cell": 18,
+        "name": "thresholds_at_rate"
+      },
+      {
+        "cell": 18,
+        "name": "micromodulus"
+      },
+      {
+        "cell": 20,
+        "name": "bond_scalar_force"
+      },
+      {
+        "cell": 20,
+        "name": "BondHistory"
+      },
+      {
+        "cell": 20,
+        "name": "__init__"
+      },
+      {
+        "cell": 20,
+        "name": "update"
+      },
+      {
+        "cell": 29,
+        "name": "njit"
+      },
+      {
+        "cell": 33,
+        "name": "accumulate_unique_pairs"
+      },
+      {
+        "cell": 33,
+        "name": "DiscretePDConcrete"
+      },
+      {
+        "cell": 33,
+        "name": "__init__"
+      },
+      {
+        "cell": 33,
+        "name": "evaluate"
+      },
+      {
+        "cell": 33,
+        "name": "damage"
+      },
+      {
+        "cell": 42,
+        "name": "concrete_grid_eight"
+      },
+      {
+        "cell": 44,
+        "name": "rod_forces"
+      },
+      {
+        "cell": 44,
+        "name": "coupling_forces"
+      },
+      {
+        "cell": 54,
+        "name": "sphere_contact"
+      },
+      {
+        "cell": 58,
+        "name": "apply_supports"
+      },
+      {
+        "cell": 58,
+        "name": "system_forces"
+      },
+      {
+        "cell": 58,
+        "name": "reset_concrete_history"
+      },
+      {
+        "cell": 58,
+        "name": "run_impact"
+      },
+      {
+        "cell": 69,
+        "name": "coupling_potential"
+      },
+      {
+        "cell": 74,
+        "name": "AppendixCInterfaceParameters"
+      },
+      {
+        "cell": 75,
+        "name": "AppendixCPDROD"
+      },
+      {
+        "cell": 75,
+        "name": "__init__"
+      },
+      {
+        "cell": 75,
+        "name": "evaluate"
+      },
+      {
+        "cell": 75,
+        "name": "reset"
+      },
+      {
+        "cell": 78,
+        "name": "bowen_concrete_force_with_modulus_DIF"
+      },
+      {
+        "cell": 81,
+        "name": "SourceShapeConcrete"
+      },
+      {
+        "cell": 81,
+        "name": "reset_stage8"
+      },
+      {
+        "cell": 81,
+        "name": "source_shaped_forces"
+      },
+      {
+        "cell": 81,
+        "name": "evaluate"
+      },
+      {
+        "cell": 85,
+        "name": "run_stage8"
+      },
+      {
+        "cell": 94,
+        "name": "_fast_concrete_kernel"
+      },
+      {
+        "cell": 94,
+        "name": "FastConcrete"
+      },
+      {
+        "cell": 94,
+        "name": "__init__"
+      },
+      {
+        "cell": 94,
+        "name": "reset"
+      },
+      {
+        "cell": 94,
+        "name": "evaluate"
+      },
+      {
+        "cell": 96,
+        "name": "_fast_pdrod_kernel"
+      },
+      {
+        "cell": 96,
+        "name": "FastInterface"
+      },
+      {
+        "cell": 96,
+        "name": "__init__"
+      },
+      {
+        "cell": 96,
+        "name": "reset"
+      },
+      {
+        "cell": 96,
+        "name": "evaluate"
+      },
+      {
+        "cell": 97,
+        "name": "fast_system_forces"
+      },
+      {
+        "cell": 97,
+        "name": "run_fast_impact"
+      },
+      {
+        "cell": 101,
+        "name": "diagnostic_run"
+      },
+      {
+        "cell": 104,
+        "name": "AppendixCParameters"
+      },
+      {
+        "cell": 104,
+        "name": "AppendixCPublishedKernel"
+      },
+      {
+        "cell": 104,
+        "name": "__init__"
+      },
+      {
+        "cell": 104,
+        "name": "evaluate"
+      },
+      {
+        "cell": 104,
+        "name": "reset"
+      },
+      {
+        "cell": 109,
+        "name": "source_c_force"
+      },
+      {
+        "cell": 109,
+        "name": "run_stage14"
+      },
+      {
+        "cell": 109,
+        "name": "forces"
+      },
+      {
+        "cell": 112,
+        "name": "normalized_acceleration"
+      },
+      {
+        "cell": 113,
+        "name": "stage17_components"
+      },
+      {
+        "cell": 113,
+        "name": "stage17_run"
+      },
+      {
+        "cell": 113,
+        "name": "force_step"
+      },
+      {
+        "cell": 118,
+        "name": "_stage18_pdrod_conservative"
+      },
+      {
+        "cell": 118,
+        "name": "conservative_interface"
+      },
+      {
+        "cell": 120,
+        "name": "stage18_run"
+      },
+      {
+        "cell": 120,
+        "name": "forces"
+      }
+    ]
+  },
+  {
+    "file": "Bowen_AppendixC_Literal_Python_Stage13.ipynb",
+    "sha256": "56a39e7c9e811924b673def5c324547924b99525ca8c7f3d22978c49774a9b48",
+    "cells": 7,
+    "syntax_errors": [],
+    "definitions": [
+      {
+        "cell": 1,
+        "name": "AppendixCParameters"
+      },
+      {
+        "cell": 1,
+        "name": "AppendixCPublishedKernel"
+      },
+      {
+        "cell": 1,
+        "name": "__init__"
+      },
+      {
+        "cell": 1,
+        "name": "evaluate"
+      },
+      {
+        "cell": 1,
+        "name": "reset"
+      }
+    ]
+  },
+  {
+    "file": "Bowen_RC_Chapter3_Stage14_AppendixC_Beam_Integration.ipynb",
+    "sha256": "f58eccac9e54dc86bff2e760edf9904ddb1efad0b0a43bfd26555f6eb36a8922",
+    "cells": 111,
+    "syntax_errors": [],
+    "definitions": [
+      {
+        "cell": 3,
+        "name": "Parameters"
+      },
+      {
+        "cell": 11,
+        "name": "c_weighted"
+      },
+      {
+        "cell": 18,
+        "name": "normal_concrete_difs"
+      },
+      {
+        "cell": 18,
+        "name": "thresholds_at_rate"
+      },
+      {
+        "cell": 18,
+        "name": "micromodulus"
+      },
+      {
+        "cell": 20,
+        "name": "bond_scalar_force"
+      },
+      {
+        "cell": 20,
+        "name": "BondHistory"
+      },
+      {
+        "cell": 20,
+        "name": "__init__"
+      },
+      {
+        "cell": 20,
+        "name": "update"
+      },
+      {
+        "cell": 29,
+        "name": "njit"
+      },
+      {
+        "cell": 33,
+        "name": "accumulate_unique_pairs"
+      },
+      {
+        "cell": 33,
+        "name": "DiscretePDConcrete"
+      },
+      {
+        "cell": 33,
+        "name": "__init__"
+      },
+      {
+        "cell": 33,
+        "name": "evaluate"
+      },
+      {
+        "cell": 33,
+        "name": "damage"
+      },
+      {
+        "cell": 42,
+        "name": "concrete_grid_eight"
+      },
+      {
+        "cell": 44,
+        "name": "rod_forces"
+      },
+      {
+        "cell": 44,
+        "name": "coupling_forces"
+      },
+      {
+        "cell": 54,
+        "name": "sphere_contact"
+      },
+      {
+        "cell": 58,
+        "name": "apply_supports"
+      },
+      {
+        "cell": 58,
+        "name": "system_forces"
+      },
+      {
+        "cell": 58,
+        "name": "reset_concrete_history"
+      },
+      {
+        "cell": 58,
+        "name": "run_impact"
+      },
+      {
+        "cell": 69,
+        "name": "coupling_potential"
+      },
+      {
+        "cell": 74,
+        "name": "AppendixCInterfaceParameters"
+      },
+      {
+        "cell": 75,
+        "name": "AppendixCPDROD"
+      },
+      {
+        "cell": 75,
+        "name": "__init__"
+      },
+      {
+        "cell": 75,
+        "name": "evaluate"
+      },
+      {
+        "cell": 75,
+        "name": "reset"
+      },
+      {
+        "cell": 78,
+        "name": "bowen_concrete_force_with_modulus_DIF"
+      },
+      {
+        "cell": 81,
+        "name": "SourceShapeConcrete"
+      },
+      {
+        "cell": 81,
+        "name": "reset_stage8"
+      },
+      {
+        "cell": 81,
+        "name": "source_shaped_forces"
+      },
+      {
+        "cell": 81,
+        "name": "evaluate"
+      },
+      {
+        "cell": 85,
+        "name": "run_stage8"
+      },
+      {
+        "cell": 94,
+        "name": "_fast_concrete_kernel"
+      },
+      {
+        "cell": 94,
+        "name": "FastConcrete"
+      },
+      {
+        "cell": 94,
+        "name": "__init__"
+      },
+      {
+        "cell": 94,
+        "name": "reset"
+      },
+      {
+        "cell": 94,
+        "name": "evaluate"
+      },
+      {
+        "cell": 96,
+        "name": "_fast_pdrod_kernel"
+      },
+      {
+        "cell": 96,
+        "name": "FastInterface"
+      },
+      {
+        "cell": 96,
+        "name": "__init__"
+      },
+      {
+        "cell": 96,
+        "name": "reset"
+      },
+      {
+        "cell": 96,
+        "name": "evaluate"
+      },
+      {
+        "cell": 97,
+        "name": "fast_system_forces"
+      },
+      {
+        "cell": 97,
+        "name": "run_fast_impact"
+      },
+      {
+        "cell": 101,
+        "name": "diagnostic_run"
+      },
+      {
+        "cell": 104,
+        "name": "AppendixCParameters"
+      },
+      {
+        "cell": 104,
+        "name": "AppendixCPublishedKernel"
+      },
+      {
+        "cell": 104,
+        "name": "__init__"
+      },
+      {
+        "cell": 104,
+        "name": "evaluate"
+      },
+      {
+        "cell": 104,
+        "name": "reset"
+      },
+      {
+        "cell": 109,
+        "name": "source_c_force"
+      },
+      {
+        "cell": 109,
+        "name": "run_stage14"
+      },
+      {
+        "cell": 109,
+        "name": "forces"
+      }
+    ]
+  },
+  {
+    "file": "Bowen_RC_Chapter3_Stage16_Fortran_Force_Density_Audit.ipynb",
+    "sha256": "4853bd0e8e3fb5180c4eeb4103d76d04a59ad8d0e6908f3ffd99eb6aab2f6488",
+    "cells": 12,
+    "syntax_errors": [],
+    "definitions": [
+      {
+        "cell": 5,
+        "name": "source_c_elastic_force_density"
+      },
+      {
+        "cell": 5,
+        "name": "fortran_acceleration"
+      }
+    ]
+  },
+  {
+    "file": "Bowen_RC_Chapter3_Stage17_Density_Normalized_Impact.ipynb",
+    "sha256": "4d89d67a0a24a1dd8d7a28a6f12e36347224da49a3845f42e80bd81b09330f44",
+    "cells": 116,
+    "syntax_errors": [],
+    "definitions": [
+      {
+        "cell": 3,
+        "name": "Parameters"
+      },
+      {
+        "cell": 11,
+        "name": "c_weighted"
+      },
+      {
+        "cell": 18,
+        "name": "normal_concrete_difs"
+      },
+      {
+        "cell": 18,
+        "name": "thresholds_at_rate"
+      },
+      {
+        "cell": 18,
+        "name": "micromodulus"
+      },
+      {
+        "cell": 20,
+        "name": "bond_scalar_force"
+      },
+      {
+        "cell": 20,
+        "name": "BondHistory"
+      },
+      {
+        "cell": 20,
+        "name": "__init__"
+      },
+      {
+        "cell": 20,
+        "name": "update"
+      },
+      {
+        "cell": 29,
+        "name": "njit"
+      },
+      {
+        "cell": 33,
+        "name": "accumulate_unique_pairs"
+      },
+      {
+        "cell": 33,
+        "name": "DiscretePDConcrete"
+      },
+      {
+        "cell": 33,
+        "name": "__init__"
+      },
+      {
+        "cell": 33,
+        "name": "evaluate"
+      },
+      {
+        "cell": 33,
+        "name": "damage"
+      },
+      {
+        "cell": 42,
+        "name": "concrete_grid_eight"
+      },
+      {
+        "cell": 44,
+        "name": "rod_forces"
+      },
+      {
+        "cell": 44,
+        "name": "coupling_forces"
+      },
+      {
+        "cell": 54,
+        "name": "sphere_contact"
+      },
+      {
+        "cell": 58,
+        "name": "apply_supports"
+      },
+      {
+        "cell": 58,
+        "name": "system_forces"
+      },
+      {
+        "cell": 58,
+        "name": "reset_concrete_history"
+      },
+      {
+        "cell": 58,
+        "name": "run_impact"
+      },
+      {
+        "cell": 69,
+        "name": "coupling_potential"
+      },
+      {
+        "cell": 74,
+        "name": "AppendixCInterfaceParameters"
+      },
+      {
+        "cell": 75,
+        "name": "AppendixCPDROD"
+      },
+      {
+        "cell": 75,
+        "name": "__init__"
+      },
+      {
+        "cell": 75,
+        "name": "evaluate"
+      },
+      {
+        "cell": 75,
+        "name": "reset"
+      },
+      {
+        "cell": 78,
+        "name": "bowen_concrete_force_with_modulus_DIF"
+      },
+      {
+        "cell": 81,
+        "name": "SourceShapeConcrete"
+      },
+      {
+        "cell": 81,
+        "name": "reset_stage8"
+      },
+      {
+        "cell": 81,
+        "name": "source_shaped_forces"
+      },
+      {
+        "cell": 81,
+        "name": "evaluate"
+      },
+      {
+        "cell": 85,
+        "name": "run_stage8"
+      },
+      {
+        "cell": 94,
+        "name": "_fast_concrete_kernel"
+      },
+      {
+        "cell": 94,
+        "name": "FastConcrete"
+      },
+      {
+        "cell": 94,
+        "name": "__init__"
+      },
+      {
+        "cell": 94,
+        "name": "reset"
+      },
+      {
+        "cell": 94,
+        "name": "evaluate"
+      },
+      {
+        "cell": 96,
+        "name": "_fast_pdrod_kernel"
+      },
+      {
+        "cell": 96,
+        "name": "FastInterface"
+      },
+      {
+        "cell": 96,
+        "name": "__init__"
+      },
+      {
+        "cell": 96,
+        "name": "reset"
+      },
+      {
+        "cell": 96,
+        "name": "evaluate"
+      },
+      {
+        "cell": 97,
+        "name": "fast_system_forces"
+      },
+      {
+        "cell": 97,
+        "name": "run_fast_impact"
+      },
+      {
+        "cell": 101,
+        "name": "diagnostic_run"
+      },
+      {
+        "cell": 104,
+        "name": "AppendixCParameters"
+      },
+      {
+        "cell": 104,
+        "name": "AppendixCPublishedKernel"
+      },
+      {
+        "cell": 104,
+        "name": "__init__"
+      },
+      {
+        "cell": 104,
+        "name": "evaluate"
+      },
+      {
+        "cell": 104,
+        "name": "reset"
+      },
+      {
+        "cell": 109,
+        "name": "source_c_force"
+      },
+      {
+        "cell": 109,
+        "name": "run_stage14"
+      },
+      {
+        "cell": 109,
+        "name": "forces"
+      },
+      {
+        "cell": 112,
+        "name": "normalized_acceleration"
+      },
+      {
+        "cell": 113,
+        "name": "stage17_components"
+      },
+      {
+        "cell": 113,
+        "name": "stage17_run"
+      },
+      {
+        "cell": 113,
+        "name": "force_step"
+      }
+    ]
+  },
+  {
+    "file": "Bowen_RC_Chapter3_Stage15_Dimensional_Stability_Audit.ipynb",
+    "sha256": "6ed08d5ac320351cb34f1b20d2f0bbddbdbce06f3a3f181ae7be424b66efb858",
+    "cells": 121,
+    "syntax_errors": [],
+    "definitions": [
+      {
+        "cell": 3,
+        "name": "Parameters"
+      },
+      {
+        "cell": 11,
+        "name": "c_weighted"
+      },
+      {
+        "cell": 18,
+        "name": "normal_concrete_difs"
+      },
+      {
+        "cell": 18,
+        "name": "thresholds_at_rate"
+      },
+      {
+        "cell": 18,
+        "name": "micromodulus"
+      },
+      {
+        "cell": 20,
+        "name": "bond_scalar_force"
+      },
+      {
+        "cell": 20,
+        "name": "BondHistory"
+      },
+      {
+        "cell": 20,
+        "name": "__init__"
+      },
+      {
+        "cell": 20,
+        "name": "update"
+      },
+      {
+        "cell": 29,
+        "name": "njit"
+      },
+      {
+        "cell": 33,
+        "name": "accumulate_unique_pairs"
+      },
+      {
+        "cell": 33,
+        "name": "DiscretePDConcrete"
+      },
+      {
+        "cell": 33,
+        "name": "__init__"
+      },
+      {
+        "cell": 33,
+        "name": "evaluate"
+      },
+      {
+        "cell": 33,
+        "name": "damage"
+      },
+      {
+        "cell": 42,
+        "name": "concrete_grid_eight"
+      },
+      {
+        "cell": 44,
+        "name": "rod_forces"
+      },
+      {
+        "cell": 44,
+        "name": "coupling_forces"
+      },
+      {
+        "cell": 54,
+        "name": "sphere_contact"
+      },
+      {
+        "cell": 58,
+        "name": "apply_supports"
+      },
+      {
+        "cell": 58,
+        "name": "system_forces"
+      },
+      {
+        "cell": 58,
+        "name": "reset_concrete_history"
+      },
+      {
+        "cell": 58,
+        "name": "run_impact"
+      },
+      {
+        "cell": 69,
+        "name": "coupling_potential"
+      },
+      {
+        "cell": 74,
+        "name": "AppendixCInterfaceParameters"
+      },
+      {
+        "cell": 75,
+        "name": "AppendixCPDROD"
+      },
+      {
+        "cell": 75,
+        "name": "__init__"
+      },
+      {
+        "cell": 75,
+        "name": "evaluate"
+      },
+      {
+        "cell": 75,
+        "name": "reset"
+      },
+      {
+        "cell": 78,
+        "name": "bowen_concrete_force_with_modulus_DIF"
+      },
+      {
+        "cell": 81,
+        "name": "SourceShapeConcrete"
+      },
+      {
+        "cell": 81,
+        "name": "reset_stage8"
+      },
+      {
+        "cell": 81,
+        "name": "source_shaped_forces"
+      },
+      {
+        "cell": 81,
+        "name": "evaluate"
+      },
+      {
+        "cell": 85,
+        "name": "run_stage8"
+      },
+      {
+        "cell": 94,
+        "name": "_fast_concrete_kernel"
+      },
+      {
+        "cell": 94,
+        "name": "FastConcrete"
+      },
+      {
+        "cell": 94,
+        "name": "__init__"
+      },
+      {
+        "cell": 94,
+        "name": "reset"
+      },
+      {
+        "cell": 94,
+        "name": "evaluate"
+      },
+      {
+        "cell": 96,
+        "name": "_fast_pdrod_kernel"
+      },
+      {
+        "cell": 96,
+        "name": "FastInterface"
+      },
+      {
+        "cell": 96,
+        "name": "__init__"
+      },
+      {
+        "cell": 96,
+        "name": "reset"
+      },
+      {
+        "cell": 96,
+        "name": "evaluate"
+      },
+      {
+        "cell": 97,
+        "name": "fast_system_forces"
+      },
+      {
+        "cell": 97,
+        "name": "run_fast_impact"
+      },
+      {
+        "cell": 101,
+        "name": "diagnostic_run"
+      },
+      {
+        "cell": 104,
+        "name": "AppendixCParameters"
+      },
+      {
+        "cell": 104,
+        "name": "AppendixCPublishedKernel"
+      },
+      {
+        "cell": 104,
+        "name": "__init__"
+      },
+      {
+        "cell": 104,
+        "name": "evaluate"
+      },
+      {
+        "cell": 104,
+        "name": "reset"
+      },
+      {
+        "cell": 109,
+        "name": "source_c_force"
+      },
+      {
+        "cell": 109,
+        "name": "run_stage14"
+      },
+      {
+        "cell": 109,
+        "name": "forces"
+      }
+    ]
+  }
+]

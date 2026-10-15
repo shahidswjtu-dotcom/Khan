@@ -1,0 +1,46 @@
+西南交通大学硕士学位论文 
+89 
+ 
+附录C PDROD 钢筋混凝土模型 
+以下是示例程序代码： 
+do i = 1, totnode1 
+    pforce33(i,1) = 0.0d0 
+    pforce33(i,2) = 0.0d0 
+    pforce33(i,3) = 0.0d0 
+    dmgpar1 = 0.0d0 
+    dmgpar2 = 0.0d0 
+ 
+    do j = 1, hhh(i) 
+        cnode  = nodenode(i,j) 
+        cnode1 = node(cnode,1) 
+        cnode2 = node(cnode,2) 
+        cnode3 = node(cnode,3) 
+        cnode4 = node(cnode,4) 
+        cnode5 = node(cnode,5) 
+        cnode6 = node(cnode,6) 
+        cnode7 = node(cnode,7) 
+        cnode8 = node(cnode,8) 
+ 
+        dispdisp(i,1,j) = N1(i,j)*disp(cnode1,1) + N2(i,j)*disp(cnode2,1) + & 
+                     N3(i,j)*disp(cnode3,1) + N4(i,j)*disp(cnode4,1) + & 
+                     N5(i,j)*disp(cnode5,1) + N6(i,j)*disp(cnode6,1) + & 
+                     N7(i,j)*disp(cnode7,1) + N8(i,j)*disp(cnode8,1) 
+ 
+        dispdisp(i,2,j) = N1(i,j)*disp(cnode1,2) + N2(i,j)*disp(cnode2,2) + & 
+                     N3(i,j)*disp(cnode3,2) + N4(i,j)*disp(cnode4,2) + & 
+                     N5(i,j)*disp(cnode5,2) + N6(i,j)*disp(cnode6,2) + & 
+                     N7(i,j)*disp(cnode7,2) + N8(i,j)*disp(cnode8,2) 
+ 
+        dispdisp(i,3,j) = N1(i,j)*disp(cnode1,3) + N2(i,j)*disp(cnode2,3) + & 
+                     N3(i,j)*disp(cnode3,3) + N4(i,j)*disp(cnode4,3) + & 
+                     N5(i,j)*disp(cnode5,3) + N6(i,j)*disp(cnode6,3) + & 
+                     N7(i,j)*disp(cnode7,3) + N8(i,j)*disp(cnode8,3) 
+ 
+        olddispdisp(1) = N1(i,j)*olddisp(cnode1,1) + N2(i,j)*olddisp(cnode2,1) + & 
+                      N3(i,j)*olddisp(cnode3,1) + N4(i,j)*olddisp(cnode4,1) + & 
+                      N5(i,j)*olddisp(cnode5,1) + N6(i,j)*olddisp(cnode6,1) + & 
+                      N7(i,j)*olddisp(cnode7,1) + N8(i,j)*olddisp(cnode8,1) 
+ 
+        olddispdisp(2) = N1(i,j)*olddisp(cnode1,2) + N2(i,j)*olddisp(cnode2,2) + & 
+                      N3(i,j)*olddisp(cnode3,2) + N4(i,j)*olddisp(cnode4,2) + & 
+                      N5(i,j)*olddisp(cnode5,2) + N6(i,j)*olddisp(cnode6,2) + & 
