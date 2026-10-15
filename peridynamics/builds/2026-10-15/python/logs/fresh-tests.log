@@ -1,0 +1,10 @@
+$ /workspace/bowen_reproduction/.venv/bin/python -m pytest -q -p no:cacheprovider --durations=12 --junitxml=/workspace/work/python-build/results/fresh-tests.xml --basetemp=/workspace/work/python-build/tmp/fresh-tests
+......................                                                   [100%]
+============================= slowest 12 durations =============================
+4.32s call     tests/test_dynamics.py::test_assembled_contact_restart_and_momentum
+3.92s call     tests/test_projection_audit.py::test_projection_audit_does_not_modify_mechanics
+3.64s call     tests/test_hook_geometry.py::test_hook_topology_lengths_and_lumped_mass
+0.15s call     tests/test_dynamics.py::test_rod_objectivity_and_plastic_return
+
+(8 durations < 0.005s hidden.  Use -vv to show these durations.)
+22 passed in 12.38s

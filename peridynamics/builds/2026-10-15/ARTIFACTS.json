@@ -1,0 +1,314 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "size_bytes": 2367,
+      "sha256": "3f9f576d8640c37e2f1392d533af6d54d8e161f7487f67dac8654599f02e7c0b"
+    },
+    {
+      "path": "fortran/BUILD_REPORT.md",
+      "size_bytes": 2892,
+      "sha256": "4f2bb14ee3bc5bfdc57ebf3033cb3c7a28481c0eb126854f3d84dfb10bc22d77"
+    },
+    {
+      "path": "fortran/compile_results.json",
+      "size_bytes": 5835,
+      "sha256": "dd85d0bc2ca96a7e4277085a2a8a4c65dc5c140afb9180369e309f1fad3a0814"
+    },
+    {
+      "path": "fortran/manifest.json",
+      "size_bytes": 2879,
+      "sha256": "e7493e5d118b9ec0e7622355d887b4ed899dcf5f7237cf926dbd676108667a3c"
+    },
+    {
+      "path": "fortran/native_operator_verification.json",
+      "size_bytes": 1995,
+      "sha256": "3c3471c742b3a1be6cb62ad59546d830cdb7fcbffe405fe23d978d56c84b3885"
+    },
+    {
+      "path": "fortran/native_tests.log",
+      "size_bytes": 1995,
+      "sha256": "3c3471c742b3a1be6cb62ad59546d830cdb7fcbffe405fe23d978d56c84b3885"
+    },
+    {
+      "path": "fortran/native_tests.xml",
+      "size_bytes": 1298,
+      "sha256": "7f145406a96d8a7228a1506ee699cb74e7716c528269d44d6e7582868902434a"
+    },
+    {
+      "path": "integrated-fortran/6f8b5b825b08/compile.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "integrated-fortran/73d1c52cd1d8/compile.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "integrated-fortran/99d6a1b962a8/compile.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "integrated-fortran/a5308e8fb313/compile.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "integrated-fortran/d221de76665e/compile.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "integrated-fortran/fbcf6409e665/compile.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "integrated-fortran/summary.json",
+      "size_bytes": 8610,
+      "sha256": "391d984f502e5eb75d5c8e01d0ef9fed95060c1154b2e6088ef4e653a0b56e8d"
+    },
+    {
+      "path": "integrated-python/bowen_from_scratch_run_py_help.log",
+      "size_bytes": 608,
+      "sha256": "459f9d36df39889d5da50bf70c3c1dd44b4d6f4cd77701c2767883b64de04558"
+    },
+    {
+      "path": "integrated-python/bowen_reproduction_run_printed_py_help.log",
+      "size_bytes": 366,
+      "sha256": "efac67744ad0e947fe64222e3e49210f968e8c87cf3215775abb09466d5a4686"
+    },
+    {
+      "path": "integrated-python/bowen_reproduction_run_py_help.log",
+      "size_bytes": 463,
+      "sha256": "d59c97933e378665dda38852d712113cf8947e26092e196705c45d9e7d4b792a"
+    },
+    {
+      "path": "integrated-python/bowen_reproduction_run_thesis_py_help.log",
+      "size_bytes": 364,
+      "sha256": "27db83ebf166b39cba487610ba190a568470e5be86e505af130fbd8b2f04d8ba"
+    },
+    {
+      "path": "integrated-python/mesh.log",
+      "size_bytes": 243,
+      "sha256": "d4c881ed631f3d669c3e8db1662491be42eece8e3367f944fba276620446163a"
+    },
+    {
+      "path": "integrated-python/stage19_saved_sample_regression.log",
+      "size_bytes": 46,
+      "sha256": "6c684da27303b59ef499dc7e7111028ce736dee30e2dd678d8f73e12f8293181"
+    },
+    {
+      "path": "integrated-python/summary.json",
+      "size_bytes": 2542,
+      "sha256": "7fc055280e6e84b09ff661cca35eae9bcd2697073b792c809bf65c1b57f236ed"
+    },
+    {
+      "path": "integrated-python/wheel.log",
+      "size_bytes": 771,
+      "sha256": "0cc5ea3388994c03f91ae3b4b1f2fedb490d07339a238d040772b2e2f4508841"
+    },
+    {
+      "path": "python/BUILD_SUMMARY.md",
+      "size_bytes": 3000,
+      "sha256": "31eddcae89d4c7f7af6e7eb99f94c7105b7f015e45b18ee6e2b2feb6ddf0ac82"
+    },
+    {
+      "path": "python/build-summary.json",
+      "size_bytes": 55217,
+      "sha256": "f752adaa0cc25149335106d27df2063946c9db2b93270580b604216054b6be27"
+    },
+    {
+      "path": "python/collect_summary.py",
+      "size_bytes": 5896,
+      "sha256": "d42fd237d78f3544c0ce2e4cb3bf2381a94e65dcecbf68621d69a0953b0b1894"
+    },
+    {
+      "path": "python/logs/fresh-cli.log",
+      "size_bytes": 701,
+      "sha256": "3f054d8d911a673065d41cb8c6dafa32660ec6d509c1582863827f45dfca3a74"
+    },
+    {
+      "path": "python/logs/fresh-mesh.log",
+      "size_bytes": 343,
+      "sha256": "67d0c4f57c76622ec72e7afd00d03020bf42f44c59b28a1faae26e5300d1c0fe"
+    },
+    {
+      "path": "python/logs/fresh-tests-initial-harness-error.log",
+      "size_bytes": 4151,
+      "sha256": "e685ba0011bcf0d63feb8ddb58ae7bbcebbc1b6430e61752519bb5df9f3a4b5f"
+    },
+    {
+      "path": "python/logs/fresh-tests.log",
+      "size_bytes": 808,
+      "sha256": "f0938b2039d7d1b573451be70c27b6d6da5c62e3608914f797a18e8bbc75c983"
+    },
+    {
+      "path": "python/logs/fresh-wheel.log",
+      "size_bytes": 916,
+      "sha256": "fac0602b6757457182c22dadd4832f86283033d87d332c99c076438248afa51b"
+    },
+    {
+      "path": "python/logs/printed-cli.log",
+      "size_bytes": 467,
+      "sha256": "08ff70170899a4dfaae83858b27a8a21399d7cb136e8166f32a1d0285d670988"
+    },
+    {
+      "path": "python/logs/recovered-fresh-tests.log",
+      "size_bytes": 1146,
+      "sha256": "cb747cd92529b58a513eeefd16450dd62b2ccdc7f606f01d57ab86133aeb1703"
+    },
+    {
+      "path": "python/logs/recovered-regression.log",
+      "size_bytes": 183,
+      "sha256": "42dc97e3e9b83382341eac29834ec301dce4c48a3d081492a82a0847aa7b4d62"
+    },
+    {
+      "path": "python/logs/recovered-reproduction-tests.log",
+      "size_bytes": 1466,
+      "sha256": "db06d7e2933e3ec67a3db5c4cf59b12c90b45e311693a5f735455132382f6b49"
+    },
+    {
+      "path": "python/logs/reproduction-cli.log",
+      "size_bytes": 556,
+      "sha256": "3f8624cfba305fa5dcb7d2f9685b60ad7fd39ba1f06b3349201b1647c6586097"
+    },
+    {
+      "path": "python/logs/reproduction-tests-initial-harness-error.log",
+      "size_bytes": 3533,
+      "sha256": "7a009ef1a47d142aeec3b73d75ff11b303b4b6cd2052b62487bf6b7653e4cdb2"
+    },
+    {
+      "path": "python/logs/reproduction-tests.log",
+      "size_bytes": 1446,
+      "sha256": "c26d4cd7108376c25f01a7a200c547118d6905839bcaf0b49e6ac63e33386b6b"
+    },
+    {
+      "path": "python/logs/thesis-cli.log",
+      "size_bytes": 464,
+      "sha256": "fb468c99574fe5e55029eedaa9dfdd816690bb6fd3f8871cf7cfee0a72afebe4"
+    },
+    {
+      "path": "python/logs/wheel-install.log",
+      "size_bytes": 392,
+      "sha256": "6d1e967e55a06ecbd7b1285d29c0d6adf35452c57cb737d9ff2016cd1d3b2c15"
+    },
+    {
+      "path": "python/logs/wheel-smoke.log",
+      "size_bytes": 422,
+      "sha256": "d2c83b7a233433e9053ee3084eaaf9765a19fb640393ba367acccf81016f3e75"
+    },
+    {
+      "path": "python/results/fresh-cli.json",
+      "size_bytes": 747,
+      "sha256": "efbc1bfb80301c67abd3610588f24e53cd5bb9e4f5571914b5a5a8a470d66743"
+    },
+    {
+      "path": "python/results/fresh-mesh.json",
+      "size_bytes": 761,
+      "sha256": "f1bc90ff37643d5f9513f432147edb48dd5b968eaea059ca9aea7041b1dafd97"
+    },
+    {
+      "path": "python/results/fresh-tests.json",
+      "size_bytes": 5593,
+      "sha256": "fd0d2fdd64e06ff792aa81bd38143e2950d78dc322fb80e7dc7d4bf66ce00b61"
+    },
+    {
+      "path": "python/results/fresh-tests.xml",
+      "size_bytes": 2650,
+      "sha256": "ece82aa6ae9a35606622000869bf73d19e32b2d29cb716539bd6440fcb84c902"
+    },
+    {
+      "path": "python/results/fresh-wheel.json",
+      "size_bytes": 900,
+      "sha256": "af7eb4247bada8ab098a34e60a1d6df55fbe1496c5d0627b4dab9429b543118c"
+    },
+    {
+      "path": "python/results/printed-cli.json",
+      "size_bytes": 759,
+      "sha256": "2155b21c7302b27be2a6f99b7b83d6c778b4b9d3c51ab1772f369002bdefb031"
+    },
+    {
+      "path": "python/results/recovered-fresh-tests.json",
+      "size_bytes": 5670,
+      "sha256": "dc41b1456d9f80c5455c3544af629aeca61ac812758f3c6c94405dbe6cf160a1"
+    },
+    {
+      "path": "python/results/recovered-fresh-tests.xml",
+      "size_bytes": 2650,
+      "sha256": "b955f10153d652ddc8ff3c35025052b59bc974ce6f7d9b7287baff00f6cf9823"
+    },
+    {
+      "path": "python/results/recovered-regression.json",
+      "size_bytes": 843,
+      "sha256": "994bd03884cf123683681dbdba75b53d20ad32c8f1b9a4d211b01533d91f5194"
+    },
+    {
+      "path": "python/results/recovered-reproduction-tests.json",
+      "size_bytes": 15639,
+      "sha256": "4286cecb88e7caed61cbacb9bf99996c2d9d196680294451c8b4380aabdaee0f"
+    },
+    {
+      "path": "python/results/recovered-reproduction-tests.xml",
+      "size_bytes": 2778,
+      "sha256": "166792358d09e96932364addec5d1754348de776a5e81e136517db2cefc52312"
+    },
+    {
+      "path": "python/results/reproduction-cli.json",
+      "size_bytes": 761,
+      "sha256": "3597508217102abab142d651eb539df3f4fb508a9078326c8819d84fcccc9c09"
+    },
+    {
+      "path": "python/results/reproduction-tests.json",
+      "size_bytes": 15562,
+      "sha256": "945b2e724ece48e549b24366ce5e48e244185b1ec252d30e798e2c0cb0340274"
+    },
+    {
+      "path": "python/results/reproduction-tests.xml",
+      "size_bytes": 2778,
+      "sha256": "ac88363360838e794b4a24f6411c15546b28b9b7dcedda9d2e116f22e1bc5ecc"
+    },
+    {
+      "path": "python/results/thesis-cli.json",
+      "size_bytes": 756,
+      "sha256": "80930e96bc407caf4e257e099fc6e7f5759094a5ed20dea1c9229d3542257b83"
+    },
+    {
+      "path": "python/results/wheel-install.json",
+      "size_bytes": 920,
+      "sha256": "20098d8d24f5ec681cb8229b07bf744a164745a4e8f3ad0efe0289aae4fc80c8"
+    },
+    {
+      "path": "python/results/wheel-smoke-details.json",
+      "size_bytes": 316,
+      "sha256": "8e39c4767963626bc84d9ba21c15abfd774e35097177738c4ab647be2fa29f46"
+    },
+    {
+      "path": "python/results/wheel-smoke.json",
+      "size_bytes": 764,
+      "sha256": "fbc0c2c43ca32b7430e591e44aef022363ef4cc15cab6cb37182ffeb9a5ec980"
+    },
+    {
+      "path": "python/smoke_installed_wheel.py",
+      "size_bytes": 1398,
+      "sha256": "67179b86f9f9ee37f5544688eede3b394eb9fa572117dba62628c9ee6114fc52"
+    },
+    {
+      "path": "python/validate_projects.py",
+      "size_bytes": 4936,
+      "sha256": "c0f1e0ec87a8f85dbc36ed30ae0959c2e1017f8be0768fd74edebfe23b468731"
+    },
+    {
+      "path": "python/wheels/bowen_pd_reconstruction-0.1.0-py3-none-any.whl",
+      "size_bytes": 11694,
+      "sha256": "febe928a8452f0d192a95926c583a4b444f17f60f212fd215eee23d37373e9d3"
+    },
+    {
+      "path": "source-syntax.json",
+      "size_bytes": 82,
+      "sha256": "6382829b3ecce11408ec2ce74f05730f88c001faf8241cbff922e06a6b423c20"
+    }
+  ]
+}

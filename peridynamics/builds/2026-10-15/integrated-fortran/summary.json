@@ -1,0 +1,180 @@
+{
+  "compiler": "GNU Fortran (Debian 14.2.0-19) 14.2.0",
+  "variants": [
+    {
+      "source_sha256": "6f8b5b825b08be1fbe21e90673b5aadfe5937cd46062948e6fd4225c850c9ab2",
+      "source_paths": [
+        "peridynamics/versions/workspace/bowen_reproduction/sources/1_Console322.f90",
+        "peridynamics/versions/archives/attachment_console322_1/1/Console322/Console322/Console322.f90",
+        "peridynamics/versions/archives/bowen_reproduction_deliverables/bowen_reproduction/sources/1_Console322.f90",
+        "peridynamics/versions/archives/bowen_thesis_model/bowen_reproduction/sources/1_Console322.f90"
+      ],
+      "command": [
+        "/workspace/work/fortran-build/reference/toolchain/usr/bin/gfortran-14",
+        "-std=legacy",
+        "-ffree-line-length-none",
+        "-O2",
+        "-g",
+        "-fcheck=all",
+        "-fbacktrace",
+        "-ffpe-trap=invalid,overflow",
+        "-B/usr/lib/gcc/x86_64-linux-gnu/14/",
+        "-L/workspace/work/fortran-build/reference/toolchain/usr/lib/x86_64-linux-gnu",
+        "-Wl,-rpath,/workspace/work/fortran-build/reference/toolchain/usr/lib/x86_64-linux-gnu",
+        "/workspace/Khan/peridynamics/versions/workspace/bowen_reproduction/sources/1_Console322.f90",
+        "-o",
+        "/workspace/work/integrated-fortran-build/6f8b5b825b08/solver"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.498,
+      "log": "6f8b5b825b08/compile.log",
+      "executable_sha256": "53a57f04874a442e52c7a46d80b80d8e7a8b7468780d7377a306e3ef89c4c4fb"
+    },
+    {
+      "source_sha256": "73d1c52cd1d87914844455299feb71f927f80acf1a170168559ef7dbc231c064",
+      "source_paths": [
+        "peridynamics/versions/archives/fortran_audit_and_corrections/fortran_reference/runs/corrected_200_final/solver.instrumented.f90"
+      ],
+      "command": [
+        "/workspace/work/fortran-build/reference/toolchain/usr/bin/gfortran-14",
+        "-std=legacy",
+        "-ffree-line-length-none",
+        "-O2",
+        "-g",
+        "-fcheck=all",
+        "-fbacktrace",
+        "-ffpe-trap=invalid,overflow",
+        "-B/usr/lib/gcc/x86_64-linux-gnu/14/",
+        "-L/workspace/work/fortran-build/reference/toolchain/usr/lib/x86_64-linux-gnu",
+        "-Wl,-rpath,/workspace/work/fortran-build/reference/toolchain/usr/lib/x86_64-linux-gnu",
+        "/workspace/Khan/peridynamics/versions/archives/fortran_audit_and_corrections/fortran_reference/runs/corrected_200_final/solver.instrumented.f90",
+        "-o",
+        "/workspace/work/integrated-fortran-build/73d1c52cd1d8/solver"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.338,
+      "log": "73d1c52cd1d8/compile.log",
+      "executable_sha256": "f07abb46703fabf18b7895cb9a891cd0abe5725767ae2e2cb460fa4be5d4b768"
+    },
+    {
+      "source_sha256": "99d6a1b962a883d4ac181a23066ae140889cd53a957ebdb9050c155a376aaeca",
+      "source_paths": [
+        "peridynamics/versions/workspace/bowen_reproduction/sources/5(\u6210\u529f)_Console2.f90",
+        "peridynamics/versions/workspace/bowen_reproduction/sources/fortran_sources/Console2.f90",
+        "peridynamics/versions/archives/attachment_console2_5_success/5(\u2502\u2554\u2563\u00aa)/Console2/Console2/Console2.f90",
+        "peridynamics/versions/archives/attachment_codex_bowen_pd_handoff/fortran_sources/Console2.f90",
+        "peridynamics/versions/archives/bowen_reproduction_deliverables/bowen_reproduction/sources/5(\u6210\u529f)_Console2.f90",
+        "peridynamics/versions/archives/bowen_reproduction_deliverables/bowen_reproduction/sources/fortran_sources/Console2.f90",
+        "peridynamics/versions/archives/bowen_thesis_model/bowen_reproduction/sources/5(\u6210\u529f)_Console2.f90",
+        "peridynamics/versions/archives/bowen_thesis_model/bowen_reproduction/sources/fortran_sources/Console2.f90",
+        "peridynamics/versions/archives/fortran_audit_and_corrections/fortran_reference/Console2.original.f90",
+        "peridynamics/versions/archives/supplied_fortran_model/fortran_reference/Console2.original.f90"
+      ],
+      "command": [
+        "/workspace/work/fortran-build/reference/toolchain/usr/bin/gfortran-14",
+        "-std=legacy",
+        "-ffree-line-length-none",
+        "-O2",
+        "-g",
+        "-fcheck=all",
+        "-fbacktrace",
+        "-ffpe-trap=invalid,overflow",
+        "-B/usr/lib/gcc/x86_64-linux-gnu/14/",
+        "-L/workspace/work/fortran-build/reference/toolchain/usr/lib/x86_64-linux-gnu",
+        "-Wl,-rpath,/workspace/work/fortran-build/reference/toolchain/usr/lib/x86_64-linux-gnu",
+        "/workspace/Khan/peridynamics/versions/workspace/bowen_reproduction/sources/5(\u6210\u529f)_Console2.f90",
+        "-o",
+        "/workspace/work/integrated-fortran-build/99d6a1b962a8/solver"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.635,
+      "log": "99d6a1b962a8/compile.log",
+      "executable_sha256": "883a1c511f1e6187da1cd04073887e954d02769a2f0461c85582b8eb486acd07"
+    },
+    {
+      "source_sha256": "a5308e8fb31335dccac4ccb4547ce30fb8723d5134f52616dff46e81b827c434",
+      "source_paths": [
+        "peridynamics/versions/archives/fortran_audit_and_corrections/fortran_reference/Console2.corrected.f90"
+      ],
+      "command": [
+        "/workspace/work/fortran-build/reference/toolchain/usr/bin/gfortran-14",
+        "-std=legacy",
+        "-ffree-line-length-none",
+        "-O2",
+        "-g",
+        "-fcheck=all",
+        "-fbacktrace",
+        "-ffpe-trap=invalid,overflow",
+        "-B/usr/lib/gcc/x86_64-linux-gnu/14/",
+        "-L/workspace/work/fortran-build/reference/toolchain/usr/lib/x86_64-linux-gnu",
+        "-Wl,-rpath,/workspace/work/fortran-build/reference/toolchain/usr/lib/x86_64-linux-gnu",
+        "/workspace/Khan/peridynamics/versions/archives/fortran_audit_and_corrections/fortran_reference/Console2.corrected.f90",
+        "-o",
+        "/workspace/work/integrated-fortran-build/a5308e8fb313/solver"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.47,
+      "log": "a5308e8fb313/compile.log",
+      "executable_sha256": "5013583c1a0e17b8aa2ef447f3a765ddaeb97aa2af23df503807dd0f9298bfb0"
+    },
+    {
+      "source_sha256": "d221de76665e3f2f7aa6a27a397e4eceff78225d4d104f7b7c00b362d416a73a",
+      "source_paths": [
+        "peridynamics/versions/archives/supplied_fortran_model/fortran_reference/runs/literal_200/solver.instrumented.f90"
+      ],
+      "command": [
+        "/workspace/work/fortran-build/reference/toolchain/usr/bin/gfortran-14",
+        "-std=legacy",
+        "-ffree-line-length-none",
+        "-O2",
+        "-g",
+        "-fcheck=all",
+        "-fbacktrace",
+        "-ffpe-trap=invalid,overflow",
+        "-B/usr/lib/gcc/x86_64-linux-gnu/14/",
+        "-L/workspace/work/fortran-build/reference/toolchain/usr/lib/x86_64-linux-gnu",
+        "-Wl,-rpath,/workspace/work/fortran-build/reference/toolchain/usr/lib/x86_64-linux-gnu",
+        "/workspace/Khan/peridynamics/versions/archives/supplied_fortran_model/fortran_reference/runs/literal_200/solver.instrumented.f90",
+        "-o",
+        "/workspace/work/integrated-fortran-build/d221de76665e/solver"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.092,
+      "log": "d221de76665e/compile.log",
+      "executable_sha256": "b0fed58bd98c66e78c444ed673ee479f62bd8de102339df593b0c58f63b8851f"
+    },
+    {
+      "source_sha256": "fbcf6409e665008ee01f801a1f5f7303e7ce7dd01c3fb9748fa78051c6910ab2",
+      "source_paths": [
+        "peridynamics/versions/archives/supplied_fortran_model/fortran_reference/runs/portable_200/solver.instrumented.f90"
+      ],
+      "command": [
+        "/workspace/work/fortran-build/reference/toolchain/usr/bin/gfortran-14",
+        "-std=legacy",
+        "-ffree-line-length-none",
+        "-O2",
+        "-g",
+        "-fcheck=all",
+        "-fbacktrace",
+        "-ffpe-trap=invalid,overflow",
+        "-B/usr/lib/gcc/x86_64-linux-gnu/14/",
+        "-L/workspace/work/fortran-build/reference/toolchain/usr/lib/x86_64-linux-gnu",
+        "-Wl,-rpath,/workspace/work/fortran-build/reference/toolchain/usr/lib/x86_64-linux-gnu",
+        "/workspace/Khan/peridynamics/versions/archives/supplied_fortran_model/fortran_reference/runs/portable_200/solver.instrumented.f90",
+        "-o",
+        "/workspace/work/integrated-fortran-build/fbcf6409e665/solver"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.034,
+      "log": "fbcf6409e665/compile.log",
+      "executable_sha256": "2e0821819d618a1d0b682e949dac2f6506fbab67bed925c994494745382fc832"
+    }
+  ],
+  "full_simulations_run": false,
+  "source_integrity_after": {
+    "files_checked": 473,
+    "failures": [],
+    "passed": true
+  },
+  "passed": true
+}

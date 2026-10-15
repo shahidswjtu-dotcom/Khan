@@ -1,0 +1,8 @@
+# Local build environments and generated simulation runs.
+.build/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.numba_cache/

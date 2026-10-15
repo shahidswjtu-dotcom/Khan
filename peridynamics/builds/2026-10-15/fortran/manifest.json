@@ -1,0 +1,68 @@
+[
+  {
+    "id": "01-6f8b5b825b08",
+    "sha256": "6f8b5b825b08be1fbe21e90673b5aadfe5937cd46062948e6fd4225c850c9ab2",
+    "origins": [
+      "/workspace/bowen_reproduction/sources/1_Console322.f90",
+      "/workspace/bowen_reproduction_deliverables.zip:bowen_reproduction/sources/1_Console322.f90",
+      "/workspace/bowen_thesis_model.zip:bowen_reproduction/sources/1_Console322.f90",
+      "/workspace/attachments/015bde8e-9575-4ae0-a963-309bcbf8ab42/1.zip:1/Console322/Console322/Console322.f90"
+    ],
+    "lines": 575,
+    "size": 19686
+  },
+  {
+    "id": "02-99d6a1b962a8",
+    "sha256": "99d6a1b962a883d4ac181a23066ae140889cd53a957ebdb9050c155a376aaeca",
+    "origins": [
+      "/workspace/bowen_reproduction/sources/5(成功)_Console2.f90",
+      "/workspace/bowen_reproduction/sources/fortran_sources/Console2.f90",
+      "/workspace/bowen_reproduction_deliverables.zip:bowen_reproduction/sources/5(成功)_Console2.f90",
+      "/workspace/bowen_reproduction_deliverables.zip:bowen_reproduction/sources/fortran_sources/Console2.f90",
+      "/workspace/bowen_thesis_model.zip:bowen_reproduction/sources/5(成功)_Console2.f90",
+      "/workspace/bowen_thesis_model.zip:bowen_reproduction/sources/fortran_sources/Console2.f90",
+      "/workspace/fortran_audit_and_corrections.zip:fortran_reference/Console2.original.f90",
+      "/workspace/supplied_Fortran_model.zip:fortran_reference/Console2.original.f90",
+      "/workspace/attachments/3bff0a43-1f38-4abb-9a05-e52f73e64364/5(成功).zip:5(│╔╣ª)/Console2/Console2/Console2.f90",
+      "/workspace/attachments/e6ad3df6-93a2-40bc-af10-af4a30186d2c/CODEX_BOWEN_PD_HANDOFF_PACKAGE (1).zip:fortran_sources/Console2.f90"
+    ],
+    "lines": 1870,
+    "size": 66546
+  },
+  {
+    "id": "03-a5308e8fb313",
+    "sha256": "a5308e8fb31335dccac4ccb4547ce30fb8723d5134f52616dff46e81b827c434",
+    "origins": [
+      "/workspace/fortran_audit_and_corrections.zip:fortran_reference/Console2.corrected.f90"
+    ],
+    "lines": 1888,
+    "size": 65659
+  },
+  {
+    "id": "04-73d1c52cd1d8",
+    "sha256": "73d1c52cd1d87914844455299feb71f927f80acf1a170168559ef7dbc231c064",
+    "origins": [
+      "/workspace/fortran_audit_and_corrections.zip:fortran_reference/runs/corrected_200_final/solver.instrumented.f90"
+    ],
+    "lines": 1941,
+    "size": 67785
+  },
+  {
+    "id": "05-d221de76665e",
+    "sha256": "d221de76665e3f2f7aa6a27a397e4eceff78225d4d104f7b7c00b362d416a73a",
+    "origins": [
+      "/workspace/supplied_Fortran_model.zip:fortran_reference/runs/literal_200/solver.instrumented.f90"
+    ],
+    "lines": 1879,
+    "size": 66951
+  },
+  {
+    "id": "06-fbcf6409e665",
+    "sha256": "fbcf6409e665008ee01f801a1f5f7303e7ce7dd01c3fb9748fa78051c6910ab2",
+    "origins": [
+      "/workspace/supplied_Fortran_model.zip:fortran_reference/runs/portable_200/solver.instrumented.f90"
+    ],
+    "lines": 1879,
+    "size": 66953
+  }
+]

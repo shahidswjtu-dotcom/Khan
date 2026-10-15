@@ -1,0 +1,22 @@
+{
+  "name": "recovered-regression",
+  "command": [
+    "/workspace/bowen_reproduction/.venv/bin/python",
+    "/workspace/Khan/peridynamics/versions/workspace/bowen_reproduction/verify_regression.py"
+  ],
+  "cwd": "/workspace/Khan/peridynamics/versions/workspace/bowen_reproduction",
+  "exit_code": 0,
+  "elapsed_seconds": 0.165,
+  "log": "/workspace/work/python-build/logs/recovered-regression.log",
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "NUMBA_CACHE_DIR": "/workspace/work/python-build/cache/numba",
+    "MPLCONFIGDIR": "/workspace/work/python-build/cache/matplotlib",
+    "XDG_CACHE_HOME": "/workspace/work/python-build/cache",
+    "PIP_CACHE_DIR": "/workspace/work/python-build/cache/pip",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "MPLBACKEND": "Agg"
+  }
+}

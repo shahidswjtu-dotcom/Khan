@@ -1,0 +1,11 @@
+$ /workspace/bowen_reproduction/.venv/bin/python -I /workspace/work/python-build/smoke_installed_wheel.py
+{
+  "imported_package": "/workspace/work/python-build/wheel-site/pdbeam/__init__.py",
+  "particles": 33600,
+  "steel_nodes": 270,
+  "unique_concrete_bonds": 1755720,
+  "steps": 1,
+  "checkpoint_roundtrip_exact": true,
+  "momentum_residual_kg_m_s": 2.2878419756241277e-14,
+  "scientific_benchmark_validated": false
+}

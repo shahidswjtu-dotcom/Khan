@@ -1,0 +1,11 @@
+Network: N=33,600 particles, 1,755,720 undirected bonds; neighbors min/mean/max=28/104.51/122
+Build time: 0.21 s; bond length range 5.00-15.00 mm
+usage: run_thesis.py [-h] --out OUT [--steps STEPS] [--dt DT]
+                     [--resume RESUME]
+
+options:
+  -h, --help       show this help message and exit
+  --out OUT
+  --steps STEPS
+  --dt DT
+  --resume RESUME

@@ -1,0 +1,16 @@
+$ /workspace/bowen_reproduction/.venv/bin/python -m pytest -q -p no:cacheprovider --durations=12 --junitxml=/workspace/work/python-build/results/recovered-reproduction-tests.xml --basetemp=/workspace/work/python-build/tmp/recovered-reproduction-tests
+........................                                                 [100%]
+============================= slowest 12 durations =============================
+35.44s call     tests/test_thesis_integrated.py::test_projection_restart_including_contact_observation
+21.02s call     tests/test_mechanics.py::test_family_projection_restart
+17.76s call     tests/test_mechanics.py::test_restart_rate_sensitive_after_contact
+3.22s call     tests/test_thesis_integrated.py::test_integrated_surface_and_self_contact
+1.30s call     tests/test_mechanics.py::test_source_lattice_family_full_rank
+1.21s call     tests/test_mechanics.py::test_rigid_translation_and_concrete_balance
+0.79s call     tests/test_source_methods.py::test_directional_energy_patch_correction
+0.67s call     tests/test_mechanics.py::test_interface_physical_force_and_moment
+0.37s call     tests/test_printed_history.py::test_printed_interface_prior_flag_persists_but_force_reloads
+0.27s call     tests/test_printed_history.py::test_printed_concrete_prior_flag_does_not_gate_force
+0.19s call     tests/test_mechanics.py::test_static_pair_fracture_energy
+0.01s call     tests/test_mechanics.py::test_reconstruction_bar_depth
+24 passed in 83.19s (0:01:23)

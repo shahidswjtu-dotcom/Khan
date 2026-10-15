@@ -1,0 +1,11 @@
+$ /workspace/bowen_reproduction/.venv/bin/python /workspace/work/python-build/fresh-source/build.py
+{
+  "particles": 33600,
+  "unique_bonds": 1755720,
+  "concrete_mass_kg": 10.080000000000002,
+  "max_initial_force_N": 0.0,
+  "bar_height_from_bottom_m": 0.02,
+  "timestep_s": 3e-07,
+  "stage19_dependencies": [],
+  "full_impact_ready": false
+}

@@ -1,0 +1,4 @@
+$ /workspace/bowen_reproduction/.venv/bin/python -m pip install --no-deps --no-index --target /workspace/work/python-build/wheel-site /workspace/work/python-build/wheels/bowen_pd_reconstruction-0.1.0-py3-none-any.whl
+Processing ./wheels/bowen_pd_reconstruction-0.1.0-py3-none-any.whl
+Installing collected packages: bowen-pd-reconstruction
+Successfully installed bowen-pd-reconstruction-0.1.0

@@ -1,0 +1,62 @@
+$ /workspace/bowen_reproduction/.venv/bin/python -m pytest -q -p no:cacheprovider --durations=12 --junitxml=/workspace/work/python-build/results/reproduction-tests.xml --basetemp=/workspace/work/python-build/tmp/reproduction-tests
+.........E....E........E                                                 [100%]
+==================================== ERRORS ====================================
+_________ ERROR at setup of test_restart_rate_sensitive_after_contact __________
+
+self = PosixPath('/workspace/work/python-build/tmp/reproduction-tests')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/workspace/work/python-build/tmp/reproduction-tests'
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1311: FileNotFoundError
+_______________ ERROR at setup of test_family_projection_restart _______________
+
+self = PosixPath('/workspace/work/python-build/tmp/reproduction-tests')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/workspace/work/python-build/tmp/reproduction-tests'
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1311: FileNotFoundError
+___ ERROR at setup of test_projection_restart_including_contact_observation ____
+
+self = PosixPath('/workspace/work/python-build/tmp/reproduction-tests')
+mode = 448, parents = False, exist_ok = False
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileNotFoundError: [Errno 2] No such file or directory: '/workspace/work/python-build/tmp/reproduction-tests'
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1311: FileNotFoundError
+============================= slowest 12 durations =============================
+3.19s call     tests/test_thesis_integrated.py::test_integrated_surface_and_self_contact
+1.39s call     tests/test_mechanics.py::test_source_lattice_family_full_rank
+1.31s call     tests/test_mechanics.py::test_rigid_translation_and_concrete_balance
+1.06s call     tests/test_mechanics.py::test_interface_physical_force_and_moment
+0.73s call     tests/test_source_methods.py::test_directional_energy_patch_correction
+0.29s call     tests/test_printed_history.py::test_printed_concrete_prior_flag_does_not_gate_force
+0.27s call     tests/test_printed_history.py::test_printed_interface_prior_flag_persists_but_force_reloads
+0.26s call     tests/test_mechanics.py::test_static_pair_fracture_energy
+0.01s call     tests/test_mechanics.py::test_reconstruction_bar_depth
+
+(3 durations < 0.005s hidden.  Use -vv to show these durations.)
+=========================== short test summary info ============================
+ERROR tests/test_mechanics.py::test_restart_rate_sensitive_after_contact - Fi...
+ERROR tests/test_mechanics.py::test_family_projection_restart - FileNotFoundE...
+ERROR tests/test_thesis_integrated.py::test_projection_restart_including_contact_observation
+21 passed, 3 errors in 9.83s

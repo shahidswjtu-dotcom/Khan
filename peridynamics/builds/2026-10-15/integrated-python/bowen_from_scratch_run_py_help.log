@@ -1,0 +1,15 @@
+usage: run.py [-h] [--steps STEPS] [--dt DT] [--out OUT] [--restart RESTART]
+              [--instantaneous-history] --accept-bulk-interface-hypothesis
+
+options:
+  -h, --help            show this help message and exit
+  --steps STEPS
+  --dt DT
+  --out OUT
+  --restart RESTART
+  --instantaneous-history
+                        Evaluate printed force law without gating by old
+                        failure flags; explicit source-literal hypothesis
+  --accept-bulk-interface-hypothesis
+                        Explicitly selects unverified interface
+                        reconstruction, not author inputs
